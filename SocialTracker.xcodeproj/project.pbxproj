@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84BD5EA11CB5F616002A19F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EA01CB5F616002A19F2 /* main.m */; };
+		84BD5EA41CB5F616002A19F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EA31CB5F616002A19F2 /* AppDelegate.m */; };
+		84BD5EA71CB5F616002A19F2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EA61CB5F616002A19F2 /* FirstViewController.m */; };
+		84BD5EAA1CB5F616002A19F2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EA91CB5F616002A19F2 /* SecondViewController.m */; };
+		84BD5EAD1CB5F616002A19F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD5EAB1CB5F616002A19F2 /* Main.storyboard */; };
+		84BD5EAF1CB5F616002A19F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD5EAE1CB5F616002A19F2 /* Assets.xcassets */; };
+		84BD5EB21CB5F616002A19F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD5EB01CB5F616002A19F2 /* LaunchScreen.storyboard */; };
+		84BD5EBD1CB5F617002A19F2 /* SocialTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EBC1CB5F617002A19F2 /* SocialTrackerTests.m */; };
+		84BD5EC81CB5F617002A19F2 /* SocialTrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BD5EC71CB5F617002A19F2 /* SocialTrackerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84BD5EB91CB5F617002A19F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BD5E941CB5F616002A19F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD5E9B1CB5F616002A19F2;
+			remoteInfo = SocialTracker;
+		};
+		84BD5EC41CB5F617002A19F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BD5E941CB5F616002A19F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD5E9B1CB5F616002A19F2;
+			remoteInfo = SocialTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84BD5E9C1CB5F616002A19F2 /* SocialTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD5EA01CB5F616002A19F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84BD5EA21CB5F616002A19F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84BD5EA31CB5F616002A19F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84BD5EA51CB5F616002A19F2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		84BD5EA61CB5F616002A19F2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		84BD5EA81CB5F616002A19F2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		84BD5EA91CB5F616002A19F2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		84BD5EAC1CB5F616002A19F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BD5EAE1CB5F616002A19F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84BD5EB11CB5F616002A19F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84BD5EB31CB5F616002A19F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD5EB81CB5F617002A19F2 /* SocialTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD5EBC1CB5F617002A19F2 /* SocialTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialTrackerTests.m; sourceTree = "<group>"; };
+		84BD5EBE1CB5F617002A19F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD5EC31CB5F617002A19F2 /* SocialTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD5EC71CB5F617002A19F2 /* SocialTrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialTrackerUITests.m; sourceTree = "<group>"; };
+		84BD5EC91CB5F617002A19F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84BD5E991CB5F616002A19F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EB51CB5F617002A19F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EC01CB5F617002A19F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84BD5E931CB5F616002A19F2 = {
+			isa = PBXGroup;
+			children = (
+				84BD5E9E1CB5F616002A19F2 /* SocialTracker */,
+				84BD5EBB1CB5F617002A19F2 /* SocialTrackerTests */,
+				84BD5EC61CB5F617002A19F2 /* SocialTrackerUITests */,
+				84BD5E9D1CB5F616002A19F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84BD5E9D1CB5F616002A19F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BD5E9C1CB5F616002A19F2 /* SocialTracker.app */,
+				84BD5EB81CB5F617002A19F2 /* SocialTrackerTests.xctest */,
+				84BD5EC31CB5F617002A19F2 /* SocialTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BD5E9E1CB5F616002A19F2 /* SocialTracker */ = {
+			isa = PBXGroup;
+			children = (
+				84BD5EA21CB5F616002A19F2 /* AppDelegate.h */,
+				84BD5EA31CB5F616002A19F2 /* AppDelegate.m */,
+				84BD5EA51CB5F616002A19F2 /* FirstViewController.h */,
+				84BD5EA61CB5F616002A19F2 /* FirstViewController.m */,
+				84BD5EA81CB5F616002A19F2 /* SecondViewController.h */,
+				84BD5EA91CB5F616002A19F2 /* SecondViewController.m */,
+				84BD5EAB1CB5F616002A19F2 /* Main.storyboard */,
+				84BD5EAE1CB5F616002A19F2 /* Assets.xcassets */,
+				84BD5EB01CB5F616002A19F2 /* LaunchScreen.storyboard */,
+				84BD5EB31CB5F616002A19F2 /* Info.plist */,
+				84BD5E9F1CB5F616002A19F2 /* Supporting Files */,
+			);
+			path = SocialTracker;
+			sourceTree = "<group>";
+		};
+		84BD5E9F1CB5F616002A19F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84BD5EA01CB5F616002A19F2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84BD5EBB1CB5F617002A19F2 /* SocialTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BD5EBC1CB5F617002A19F2 /* SocialTrackerTests.m */,
+				84BD5EBE1CB5F617002A19F2 /* Info.plist */,
+			);
+			path = SocialTrackerTests;
+			sourceTree = "<group>";
+		};
+		84BD5EC61CB5F617002A19F2 /* SocialTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84BD5EC71CB5F617002A19F2 /* SocialTrackerUITests.m */,
+				84BD5EC91CB5F617002A19F2 /* Info.plist */,
+			);
+			path = SocialTrackerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BD5E9B1CB5F616002A19F2 /* SocialTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD5ECC1CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTracker" */;
+			buildPhases = (
+				84BD5E981CB5F616002A19F2 /* Sources */,
+				84BD5E991CB5F616002A19F2 /* Frameworks */,
+				84BD5E9A1CB5F616002A19F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialTracker;
+			productName = SocialTracker;
+			productReference = 84BD5E9C1CB5F616002A19F2 /* SocialTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84BD5EB71CB5F617002A19F2 /* SocialTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD5ECF1CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTrackerTests" */;
+			buildPhases = (
+				84BD5EB41CB5F617002A19F2 /* Sources */,
+				84BD5EB51CB5F617002A19F2 /* Frameworks */,
+				84BD5EB61CB5F617002A19F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BD5EBA1CB5F617002A19F2 /* PBXTargetDependency */,
+			);
+			name = SocialTrackerTests;
+			productName = SocialTrackerTests;
+			productReference = 84BD5EB81CB5F617002A19F2 /* SocialTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84BD5EC21CB5F617002A19F2 /* SocialTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD5ED21CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTrackerUITests" */;
+			buildPhases = (
+				84BD5EBF1CB5F617002A19F2 /* Sources */,
+				84BD5EC01CB5F617002A19F2 /* Frameworks */,
+				84BD5EC11CB5F617002A19F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BD5EC51CB5F617002A19F2 /* PBXTargetDependency */,
+			);
+			name = SocialTrackerUITests;
+			productName = SocialTrackerUITests;
+			productReference = 84BD5EC31CB5F617002A19F2 /* SocialTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84BD5E941CB5F616002A19F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Flash Software Solution Inc.";
+				TargetAttributes = {
+					84BD5E9B1CB5F616002A19F2 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					84BD5EB71CB5F617002A19F2 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 84BD5E9B1CB5F616002A19F2;
+					};
+					84BD5EC21CB5F617002A19F2 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 84BD5E9B1CB5F616002A19F2;
+					};
+				};
+			};
+			buildConfigurationList = 84BD5E971CB5F616002A19F2 /* Build configuration list for PBXProject "SocialTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84BD5E931CB5F616002A19F2;
+			productRefGroup = 84BD5E9D1CB5F616002A19F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84BD5E9B1CB5F616002A19F2 /* SocialTracker */,
+				84BD5EB71CB5F617002A19F2 /* SocialTrackerTests */,
+				84BD5EC21CB5F617002A19F2 /* SocialTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84BD5E9A1CB5F616002A19F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD5EB21CB5F616002A19F2 /* LaunchScreen.storyboard in Resources */,
+				84BD5EAF1CB5F616002A19F2 /* Assets.xcassets in Resources */,
+				84BD5EAD1CB5F616002A19F2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EB61CB5F617002A19F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EC11CB5F617002A19F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84BD5E981CB5F616002A19F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD5EAA1CB5F616002A19F2 /* SecondViewController.m in Sources */,
+				84BD5EA41CB5F616002A19F2 /* AppDelegate.m in Sources */,
+				84BD5EA71CB5F616002A19F2 /* FirstViewController.m in Sources */,
+				84BD5EA11CB5F616002A19F2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EB41CB5F617002A19F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD5EBD1CB5F617002A19F2 /* SocialTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD5EBF1CB5F617002A19F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD5EC81CB5F617002A19F2 /* SocialTrackerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84BD5EBA1CB5F617002A19F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD5E9B1CB5F616002A19F2 /* SocialTracker */;
+			targetProxy = 84BD5EB91CB5F617002A19F2 /* PBXContainerItemProxy */;
+		};
+		84BD5EC51CB5F617002A19F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD5E9B1CB5F616002A19F2 /* SocialTracker */;
+			targetProxy = 84BD5EC41CB5F617002A19F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84BD5EAB1CB5F616002A19F2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BD5EAC1CB5F616002A19F2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84BD5EB01CB5F616002A19F2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BD5EB11CB5F616002A19F2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84BD5ECA1CB5F617002A19F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84BD5ECB1CB5F617002A19F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84BD5ECD1CB5F617002A19F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84BD5ECE1CB5F617002A19F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		84BD5ED01CB5F617002A19F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialTracker.app/SocialTracker";
+			};
+			name = Debug;
+		};
+		84BD5ED11CB5F617002A19F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialTracker.app/SocialTracker";
+			};
+			name = Release;
+		};
+		84BD5ED31CB5F617002A19F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialTracker;
+			};
+			name = Debug;
+		};
+		84BD5ED41CB5F617002A19F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialTracker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84BD5E971CB5F616002A19F2 /* Build configuration list for PBXProject "SocialTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD5ECA1CB5F617002A19F2 /* Debug */,
+				84BD5ECB1CB5F617002A19F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BD5ECC1CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD5ECD1CB5F617002A19F2 /* Debug */,
+				84BD5ECE1CB5F617002A19F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84BD5ECF1CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD5ED01CB5F617002A19F2 /* Debug */,
+				84BD5ED11CB5F617002A19F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		84BD5ED21CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD5ED31CB5F617002A19F2 /* Debug */,
+				84BD5ED41CB5F617002A19F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84BD5E941CB5F616002A19F2 /* Project object */;
+}
