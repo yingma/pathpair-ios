@@ -4,14 +4,69 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SocialTracker Watch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>SocialTracker Watch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>SocialTracker.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SocialWatch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>SocialWatch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Watch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Watch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8451BB831D709E9800BE5812</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8492BB751CFF71CE005F3FD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8492BBA01CFF721B005F3FD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84A124101CBACC9B00002D12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84A1243C1CBACDA800002D12</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>84BD5E9B1CB5F616002A19F2</key>
 		<dict>
 			<key>primary</key>
@@ -23,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>84BD5EC21CB5F617002A19F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84F4DE361CFF36B9001A7035</key>
 		<dict>
 			<key>primary</key>
 			<true/>

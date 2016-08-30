@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WebBaseUrl</key>
+	<string>http://ec2-52-2-24-89.compute-1.amazonaws.com:8060</string>
+	<key>WebRedirectUrl</key>
+	<string>http://ec2-52-2-24-89.compute-1.amazonaws.com:8060/users/profile</string>
+	<key>SocketUrl</key>
+	<string>http://ec2-52-2-24-89.compute-1.amazonaws.com:8060/chat</string>
+</dict>
+</plist>
