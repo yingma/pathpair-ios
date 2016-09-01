@@ -32,8 +32,12 @@
         self.labelTime.text = [NSString stringWithFormat:@"%@ for %d mins", [meeting.start timeAgo], [meeting.length intValue]];
         
         // start and end point coordinates
+
         CLLocationCoordinate2D startPoint = CLLocationCoordinate2DMake([meeting.latitude doubleValue], [meeting.longitude doubleValue]);
         CLLocationCoordinate2D endPoint = CLLocationCoordinate2DMake([meeting.latitude1 doubleValue], [meeting.longitude1 doubleValue]);
+        
+        if ([meeting.latitude doubleValue] == 0 || [meeting.longitude doubleValue] == 0)
+            startPoint = endPoint;
         
         // create a placemark and map item for your start point
         MKPlacemark *startPlacemark = [[MKPlacemark alloc]initWithCoordinate:startPoint addressDictionary:nil];

@@ -58,14 +58,14 @@ NSString * const kLocationChangeNotification = @"kLocationChangeNotification";
         [NSObject eventPostNotification:kLocationChangeNotification
                                withDict:@{@"latitude":[NSString stringWithFormat:@"%f", location.coordinate.latitude], @"longitude":[NSString stringWithFormat:@"%f", location.coordinate.longitude]}];
         
-        static dispatch_once_t onceToken;
+        //static dispatch_once_t onceToken;
         
-        dispatch_once(&onceToken, ^{
+        //dispatch_once(&onceToken, ^{
             [[ServiceEngine sharedEngine] publishLongitude:location.coordinate.longitude
                                                   latitude:location.coordinate.latitude
                                                  doneBlock:^(NSError *error) {
                                                  }];
-        });
+        //});
 
         
     }

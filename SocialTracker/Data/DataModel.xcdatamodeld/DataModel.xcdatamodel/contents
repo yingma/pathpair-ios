@@ -22,7 +22,7 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="meetings" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Meeting" inverseName="contact" inverseEntity="Meeting" syncable="YES"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="contacts" inverseEntity="Room" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tag" inverseName="contact" inverseEntity="Tag" syncable="YES"/>
     </entity>
     <entity name="Meeting" representedClassName="Meeting" syncable="YES">
@@ -50,7 +50,7 @@
         <attribute name="pending" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="rid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" inverseName="room" inverseEntity="Contact" syncable="YES"/>
+        <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Message" inverseName="room" inverseEntity="Message" syncable="YES"/>
     </entity>
     <entity name="Search" representedClassName="Search" syncable="YES">

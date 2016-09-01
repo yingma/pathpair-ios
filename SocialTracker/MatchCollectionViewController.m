@@ -113,13 +113,13 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
     
     // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
     // This is where you'll make requests to an API, reload data, or process information
-    Meeting *lastMeeting = [_theApp lastMeeting];
+    //Meeting *lastMeeting = [_theApp lastMeeting];
     
     // use 30 days ago date
-    NSDate *start = [[NSDate date] dateByAddingTimeInterval:-30*24*60*60];
+    NSDate *start = [[NSDate date] dateByAddingTimeInterval:-7*24*60*60];
     
-    if (lastMeeting != nil)
-        start = lastMeeting.start;
+//    if (lastMeeting != nil)
+//        start = lastMeeting.start;
     
     [[ServiceEngine sharedEngine] searchMeetingFromTime:start
                                                  toTime:nil
@@ -141,7 +141,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                         if (contact == nil) {
                                                             contact = [_theApp newContact];
                                                             contact.flag = [NSNumber numberWithInteger:1]; // new
-                                                        } else
+                                                        } else if (m == nil)
                                                             contact.flag = [NSNumber numberWithInteger:2];
                                                         contact.needRefresh = YES;
                                                         
@@ -166,7 +166,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                         else
                                                             m.matches = meeting.matches1;
                                                         
-                                                        if (meeting.lengthInMinutes != 0)
+                                                        if (meeting.lengthInMinutes >= 1) // less 1 minutes
                                                             m.length = [NSNumber numberWithFloat:meeting.lengthInMinutes];
                                                         else { // when length is zero, calc minutes on the fly
                                                             NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:m.start];
@@ -300,7 +300,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
 - (void)renderCell:(MatchCollectionViewCell*)cell
        withContact:(Contact *)contact{
     
-    if (contact.meetings.count > 0) {
+    //if (contact.meetings.count > 0) {
         if (contact.meetings.count == 1) {
             cell.labelTimes.text = @"For the first time.";
         } else {
@@ -355,7 +355,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
         } else {
             cell.labelAge.text = @"";
         }
-    }
+    //}
     
     if (contact.photourl != nil) {
         
@@ -708,18 +708,53 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                         andUser:contact.uid
                                   withDoneBlock:^(NSError * _Nullable error) {
                                       
-                                      button.enabled = YES;
+                                        if (error) {
+                                          
+                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                button.enabled = YES;
+                                              
+                                                UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                               message:[[@"Cannot like " stringByAppendingString:contact.firstname ?: @""] stringByAppendingString:@" because she/he unliked you"]
+                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                              
+                                                UIAlertAction *okAction = [UIAlertAction
+                                                                         actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                                                         style:UIAlertActionStyleCancel
+                                                                         handler:^(UIAlertAction *action)
+                                                                         {
+                                                                             //NSLog(@"ok action");
+                                                                         }];
+                                              
+                                                [alert addAction:okAction];
+                                              
+                                                [self presentViewController:alert animated:YES completion:^{
+                                                        [_theApp deleteRoom:contact.room];
+                                                        contact.room = nil;
+                                                        [_theApp saveContext];
+                                                    }];
+                                            });
+                                                                                  
+                                            return;
+                                        }
                                       
-                                      if (error)
-                                          return;
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                          
+                                            button.enabled = YES;
                                       
-                                      [button setTitle: @"Unlike" forState: UIControlStateNormal];
-                                      cell.buttonChat.hidden = NO;
+                                            [button setTitle: @"Unlike" forState: UIControlStateNormal];
+                                            cell.buttonChat.hidden = NO;
+                                        });
                                       
-                                      Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
-                                      //[contact.room addContactsObject:c];
-                                      contact.room.pending = [NSNumber numberWithInteger:0];
-                                      [_theApp enterRoom1:contact.room andUser:c];
+                                        Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
+                                        //[contact.room addContactsObject:c];
+                                        contact.room.pending = [NSNumber numberWithInteger:0];
+                                        [_theApp enterRoom1:contact.room andUser:c];
+                                      
+                                      
+                                        // enter the room
+                                        NSDictionary *parameters = @{@"roomId" : contact.room.rid, @"userId" : [[ServiceEngine sharedEngine] uid]};
+                                        NSArray *array = [NSArray arrayWithObject:parameters];
+                                        [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                       
                                   }];
 
@@ -728,26 +763,29 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
         
         // indicate to leave the room
         
-        NSString *const kMessageSequence       = @"MessageSequence";
+        NSString *const kMessageSequence = @"MessageSequence";
 
         NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
-        NSDictionary *parameters = @{kAppSocketRoomId: contact.room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)seq]};
+        NSDictionary *parameters = @{kAppSocketRoomId: contact.room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
         NSArray *array = [NSArray arrayWithObject:parameters];
         [[WebSocketEngine sharedEngine] emitWithAck:@"send"
                                                args:array
                               withCompletionHandler:^() {
                                   
-                                  button.enabled = YES;
+                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                      button.enabled = YES;
                                   
-                                  [button setTitle: @"Like" forState: UIControlStateNormal];
-                                  cell.buttonChat.hidden = YES;
+                                      [button setTitle: @"Like" forState: UIControlStateNormal];
+                                      cell.buttonChat.hidden = YES;
+                                  });
                                   
                                   NSDictionary *parameters = @{@"roomId" : contact.room.rid};
                                   NSArray *array = [NSArray arrayWithObject:parameters];
                                   [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
                                   
                                   [_theApp deleteRoom:contact.room];
-                                  
+                                  contact.room = nil;
+                                  [_theApp saveContext];
                               }];
         
         

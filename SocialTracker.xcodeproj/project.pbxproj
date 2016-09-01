@@ -265,7 +265,6 @@
 		84BD5EC31CB5F617002A19F2 /* SocialTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD5EC71CB5F617002A19F2 /* SocialTrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocialTrackerUITests.m; sourceTree = "<group>"; };
 		84BD5EC91CB5F617002A19F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84BF59601CD508360086CC5F /* PSLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSLocation.framework; sourceTree = "<group>"; };
 		84BF59621CD5262F0086CC5F /* PathSenseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PathSenseService.h; path = GPS/PathSenseService.h; sourceTree = "<group>"; };
 		84BF59631CD5262F0086CC5F /* PathSenseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PathSenseService.m; path = GPS/PathSenseService.m; sourceTree = "<group>"; };
 		84BF597A1CD651860086CC5F /* Activity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Activity+CoreDataProperties.h"; path = "Data/Activity+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -769,7 +768,6 @@
 			children = (
 				84F745241D1E2CC500E5A96A /* MapKit.framework */,
 				843006191CFFBC0800F4C6E7 /* GLKit.framework */,
-				84BF59601CD508360086CC5F /* PSLocation.framework */,
 				84A123C51CBAC3FF00002D12 /* CoreBluetooth.framework */,
 				84A123C31CBAC3E200002D12 /* UIKit.framework */,
 				84B0B65F1CCB9E1A003CC21B /* CoreLocation.framework */,
@@ -902,6 +900,7 @@
 					};
 					84BD5E9B1CB5F616002A19F2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5G894MD3M3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1403,6 +1402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1453,6 +1453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -104,11 +104,94 @@
                                                       
                                                   }
                                               }];
+            // reload the data from server
+            [[ServiceEngine sharedEngine] getContactByUid:nil
+                                              withSuccess:^(NSArray<ServiceContact *> * _Nullable contacts) {
+                                                  
+                                                  if (contacts > 0) {
+                                                      
+                                                      [ServiceEngine sharedEngine].uid = contacts[0].uid;
+                                                      [ServiceEngine sharedEngine].uuid = contacts[0].uuid;
+                                                      
+                                                      [[NSUserDefaults standardUserDefaults] setObject:contacts[0].uid
+                                                                                                forKey:kUIDKey];
+                                                      [[NSUserDefaults standardUserDefaults] setObject:contacts[0].uuid
+                                                                                                forKey:kUUIDKey];
+                                                      
+                                                      [[NSUserDefaults standardUserDefaults] synchronize];
+                                                      
+                                                      if ([_theApp getContactbyUid:contacts[0].uid] == nil) {
+                                                          
+                                                          Contact* contact = [_theApp newContact];
+                                                          contact.lastname = contacts[0].lastname;
+                                                          contact.firstname = contacts[0].firstname;
+                                                          contact.birthday = contacts[0].birthday;
+                                                          contact.gender = contacts[0].gender;
+                                                          contact.city = contacts[0].city;
+                                                          contact.uuid = contacts[0].uuid;
+                                                          contact.uid = contacts[0].uid;
+                                                          contact.photourl = contacts[0].photourl;
+                                                          
+                                                          contact.company = contacts[0].company;
+                                                          contact.bio = contacts[0].bio;
+                                                          
+                                                          [_theApp initProfile:contact];
+                                                          [_theApp initRooms];
+                                                          
+                                                          [[WebSocketEngine sharedEngine] registerWithChatSocketDelegate:_theApp];
+                                                          
+                                                          //                                  [[ServiceEngine sharedEngine] getProfile:contacts[0].uuid type:@"self" withSuccess:^(NSArray<NSString *> * _Nullable tags) {
+                                                          //
+                                                          //                                      for (NSString *t in tags) {
+                                                          //
+                                                          //                                          Tag * tag = [_theApp newTag:t];
+                                                          //                                          [contact addTagsObject:tag];
+                                                          //                                      }
+                                                          //
+                                                          //                                      [[ServiceEngine sharedEngine] getCriteriaWithSuccess:^(ServiceCriteria * _Nullable criteria) {
+                                                          //
+                                                          //                                          Search * search = [_theApp getCriteria];
+                                                          //                                          search.ageFrom = [NSNumber numberWithFloat:criteria.from];
+                                                          //                                          search.ageTo = [NSNumber numberWithFloat:criteria.to];
+                                                          //                                          search.male = [NSNumber numberWithBool:criteria.male];
+                                                          //                                          search.female = [NSNumber numberWithBool:criteria.female];
+                                                          //
+                                                          //                                          [[ServiceEngine sharedEngine] getCriteriaTagWithSuccess:^(NSArray<NSString *> * _Nullable tags) {
+                                                          //
+                                                          //                                              for (NSString * tag in tags) {
+                                                          //                                                  [search addTagsObject:[_theApp newTag:tag]];
+                                                          //                                              }
+                                                          //                                              
+                                                          //                                          } failure:^(NSError * _Nullable error) {
+                                                          //                                              
+                                                          //                                          }];
+                                                          //                                          
+                                                          //                                      } failure:^(NSError * _Nullable error) {
+                                                          //                                          
+                                                          //                                      }];
+                                                          //
+                                                          //                                      
+                                                          //                                  } failure:^(NSError * _Nullable error) {
+                                                          //                                      
+                                                          //                                  }];
+                                                          
+                                                          
+                                                          [_theApp saveContext];
+                                                      }
+                                                      
+                                                  }
+                                                  
+                                                  // change root view controler
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      [_theApp enterMainSegue:1];
+                                                  });
+                                                  
+                                                  
+                                              } failure:^(NSError * _Nullable error) {
+                                                  
+                                              }];
             
-            // change root view controler
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_theApp enterMainSegue:1];
-            });
+            
             
             return;
         }

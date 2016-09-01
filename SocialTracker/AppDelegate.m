@@ -219,8 +219,6 @@ forRemoteNotification:(NSDictionary *)userInfo
     NSString *rid = [aps objectForKey:@"r"];
     NSString *uid = [aps objectForKey:@"c"];
     
-    Room * room = [self getRoom:rid];
-    
     Contact *contact = [self getContactbyUid:uid];
     
     //room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
@@ -228,20 +226,24 @@ forRemoteNotification:(NSDictionary *)userInfo
         contact = [self newContact];
         contact.uid = uid;
         contact.time = [NSDate date];
+        contact.needRefresh = YES;
     }
     
+    Room * room = [self getRoom:rid];
     if (room == nil) {
         room = [self newRoom];
         room.rid = rid;
         room.pending = [NSNumber numberWithInteger:2];
-        
-        Message* message = [self newMessage:@"Waiting for you to like back"
-                                    andUser:uid];
-        
-        [room addMessagesObject:message];
-        room.time = [NSDate date];
-        room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
     }
+    
+    room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+    room.time = [NSDate date];
+    
+    room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
+    [self setBadgeChat: ++_badgeChat];
+    
+    contact.room = room;
+    contact.time = [NSDate date];
     
     [self saveContext];
     
@@ -249,40 +251,33 @@ forRemoteNotification:(NSDictionary *)userInfo
         
         if ([aps objectForKey:@"r"]) { // chat
             // do something with job id
-                       
-            //Contact *c = [self getContactbyUid:[[ServiceEngine sharedEngine] uid]];
-            //[room addContactsObject:c];
+            
+            //room.pending = [NSNumber numberWithInteger:0];
+            
+            Message * message = [self newMessage:[NSString stringWithFormat:@"You like back, you can chat with %@", contact.firstname]
+                                         andUser:[[ServiceEngine sharedEngine] uid]];
+            
+            [room addMessagesObject:message];
+            
+            Contact* c = [self getContactbyUid:[[ServiceEngine sharedEngine] uid]];
+            [self enterRoom1:room andUser:c];
+            
+            //[self saveContext];
             
             //enter chat room
             [[ServiceEngine sharedEngine] enterRoom:rid
                                             andUser:uid
                                       withDoneBlock:^(NSError * _Nullable error) {
                                           
-                                          // fail to enter
-                                          if (error != nil) {
-                                              
-                                              UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Error"
-                                                                                                               message:@""
-                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                                              
-                                              UIAlertAction *okAction = [UIAlertAction
-                                                                         actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                                                                         style:UIAlertActionStyleCancel
-                                                                         handler:^(UIAlertAction *action) {
-                                                                             [alert dismissViewControllerAnimated:YES completion:nil];
-                                                                         }];
-                                              
-                                              [alert addAction:okAction];
-                                              
-                                              [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
-                                              
-                                              return;
-                                          }
-                                          
-                                          contact.room = room;
+                                          //contact.room = room;
                                           room.pending = [NSNumber numberWithInteger:0];
                                           //NSLog(@"%d", room.contacts.count);
                                           [room addContactsObject:contact];
+                                          
+                                          // enter the room
+                                          NSDictionary *parameters = @{@"roomId" : room.rid};
+                                          NSArray *array = [NSArray arrayWithObject:parameters];
+                                          [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                           
                                           [self saveContext];
                                           
@@ -293,8 +288,13 @@ forRemoteNotification:(NSDictionary *)userInfo
 
     } else if ([identifier isEqualToString:NotificationActionReject]) {
         
-        // no action
         [self deleteRoom:room];
+        contact.room = nil;
+        
+        room.badge = [NSNumber numberWithInteger:[room.badge integerValue] - 1];
+        [self setBadgeChat: --_badgeChat];
+        
+        [self saveContext];
     }
     
     if (completionHandler) {
@@ -332,10 +332,10 @@ forRemoteNotification:(NSDictionary *)userInfo
     
     Contact *contact = [self getContactbyUid:uid];
     
-
     if (contact == nil) {
         contact = [self newContact];
         contact.uid = uid;
+        contact.needRefresh = YES;
     }
     
     room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
@@ -367,7 +367,7 @@ forRemoteNotification:(NSDictionary *)userInfo
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action) {
                                        
-                                       room.pending = [NSNumber numberWithInteger:0];
+                                       //room.pending = [NSNumber numberWithInteger:0];
                                        
                                        Message * message = [self newMessage:[NSString stringWithFormat:@"You like back, you can chat with %@", contact.firstname]
                                                                     andUser:[[ServiceEngine sharedEngine] uid]];
@@ -417,7 +417,6 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                                          [self setBadgeChat: --_badgeChat];
                                                                      });
                                                                      
-
                                                                      //NSLog(@"%d", room.contacts.count);
                                                                      [room addContactsObject:contact];
                                                                      
@@ -986,7 +985,8 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                           if (![uid isEqualToString:[[ServiceEngine sharedEngine] uid]]) {
                                                               contact.room = room;
                                                               room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-                                                          }
+                                                          } else
+                                                              [self deleteRoom:room];                                                          
                                                           
                                                       }
                                                       
@@ -1164,7 +1164,8 @@ forRemoteNotification:(NSDictionary *)userInfo
 //        contact.room = nil;
     
     [context deleteObject:room];
-    [self saveContext];
+    
+//    [self saveContext];
     
 }
 
@@ -1289,6 +1290,8 @@ forRemoteNotification:(NSDictionary *)userInfo
     [_persistentStoreCoordinator executeRequest:delete
                                     withContext:_managedObjectContext
                                           error:&deleteError];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kPhotoKey];
 
 
 }
@@ -1364,7 +1367,7 @@ forRemoteNotification:(NSDictionary *)userInfo
         contact.room = room;
     
     room.pending = [NSNumber numberWithInteger:0];
-    room.time = [NSDate date];
+    //room.time = [NSDate date];
     
     [room addContactsObject:contact];
     
@@ -1377,6 +1380,8 @@ forRemoteNotification:(NSDictionary *)userInfo
     
     contact.room = room;
     room.time = [NSDate date];
+    
+    [room addContactsObject:contact];
 
     [self saveContext];
 }

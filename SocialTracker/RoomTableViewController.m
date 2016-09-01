@@ -237,6 +237,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    
     _room = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
+    NSLog(@"enter %@", _room.rid);
+    
     if ([_room.pending integerValue] == 2) // wait for approve
         [self performSegueWithIdentifier:@"detail" sender:self];
     else

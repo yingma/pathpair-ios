@@ -1874,15 +1874,16 @@ Please choose how you would like to reset your password:</string>
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="185"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last time - Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKw-Ae-5SG">
-                                <rect key="frame" x="20" y="10" width="110" height="16"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="10" width="119" height="17"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eKw-Ae-5SG" firstAttribute="leading" secondItem="vcH-Jb-ycB" secondAttribute="leadingMargin" constant="4" id="9b6-Ye-n3y"/>
+                            <constraint firstItem="eKw-Ae-5SG" firstAttribute="leading" secondItem="vcH-Jb-ycB" secondAttribute="leadingMargin" id="9b6-Ye-n3y"/>
                             <constraint firstItem="eKw-Ae-5SG" firstAttribute="top" secondItem="vcH-Jb-ycB" secondAttribute="topMargin" constant="10" id="glE-ac-Fcn"/>
                         </constraints>
                     </view>
@@ -2191,8 +2192,8 @@ Please choose how you would like to reset your password:</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tyQ-Bl-ccB"/>
-        <segue reference="a3L-6E-8oh"/>
-        <segue reference="EWS-wV-QDW"/>
+        <segue reference="Fgh-nG-HLI"/>
+        <segue reference="wpR-yO-YhO"/>
         <segue reference="yqo-wJ-31W"/>
     </inferredMetricsTieBreakers>
 </document>
