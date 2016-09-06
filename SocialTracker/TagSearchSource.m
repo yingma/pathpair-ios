@@ -34,7 +34,7 @@
         return;
     }
     
-    NSString *trimmedString = [_searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmedString = [[_searchTerm stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     [[ServiceEngine sharedEngine] findTags:trimmedString
                                withSuccess:^(NSArray *tags) {

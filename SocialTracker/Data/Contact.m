@@ -19,7 +19,7 @@
 // Insert code here to add functionality to your managed object subclass
 - (void)addMeetingsObject:(Meeting *)value {
     NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.meetings];
-    [tempSet insertObject:value atIndex:0];
+    [tempSet addObject:value];
     self.meetings = tempSet;
 }
 

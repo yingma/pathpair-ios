@@ -27,6 +27,7 @@
 @property (nonatomic, assign) NSString* uuid;
 
 
+
 + (BLEPeripheralManager*)manager;
 -(void)startAdvertising:(NSString *)uuid;
 -(void)stopAdvertising;

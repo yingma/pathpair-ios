@@ -18,6 +18,7 @@
 #import "AFNetworkReachabilityManager.h"
 
 NSString * const kPathChangeNotification = @"kPathChangeNotification";
+NSString * const kGPSKey = @"GPS";
 
 //@interface PathSenseService () <PSLocationManagerDelegate>
 @interface PathSenseService () <CLLocationManagerDelegate>
@@ -68,14 +69,20 @@ NSString * const kPathChangeNotification = @"kPathChangeNotification";
         if ([_locationManager respondsToSelector:@selector(allowsBackgroundLocationUpdates)]) {  // iOS 9 or later
             [_locationManager setAllowsBackgroundLocationUpdates:YES];
         }
+        NSNumber * onGPS = [[NSUserDefaults standardUserDefaults] objectForKey:kGPSKey];
         
-        self.on = YES;
+        if (onGPS == nil) {
+            _on = YES;
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kGPSKey];
+        } else
+            _on = [[NSUserDefaults standardUserDefaults] boolForKey:kGPSKey];
         
     }
     return self;
 }
 
 - (void) setOn:(bool)on {
+    
     if (on) {
         _on = YES;
         [_locationManager startUpdatingLocation];
@@ -84,6 +91,9 @@ NSString * const kPathChangeNotification = @"kPathChangeNotification";
         _on = NO;
         [_locationManager stopUpdatingLocation];
     }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:on
+                                            forKey:kGPSKey];
  }
 
 //- (void) trimLocationHistory {
@@ -126,7 +136,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Location Autorization" message:@"This application is not authorized to use location services!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
         
-    } else {
+    } else if (_on) {
         [_locationManager startUpdatingLocation];
     }
 }
@@ -154,15 +164,24 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 //----------------------------------------------------------------------------------
 - (void)updateUserLocation:(CLLocation *)location {
     
+    if (self.updating)
+        return;
+    
+    self.updating = YES;
+    
     // update the coordinate of location
     _location = location;
     
     // If the event is recent, do something with it.
-    if ([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] == AFNetworkReachabilityStatusNotReachable)
+    if ([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] == AFNetworkReachabilityStatusNotReachable) {
+        self.updating = NO;
         return;
+    }
     
-    if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways)
+    if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorizedAlways) {
+        self.updating = NO;
         return;
+    }
     
     // If the event is recent, do something with it.
     [NSObject eventPostNotification:kPathChangeNotification
@@ -176,6 +195,8 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
                                              doneBlock:^(NSError *error) {
                                              }];
     //});
+    
+    self.updating = NO;
     
 }
 

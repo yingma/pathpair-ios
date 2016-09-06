@@ -269,15 +269,26 @@ forRemoteNotification:(NSDictionary *)userInfo
                                             andUser:uid
                                       withDoneBlock:^(NSError * _Nullable error) {
                                           
-                                          //contact.room = room;
-                                          room.pending = [NSNumber numberWithInteger:0];
-                                          //NSLog(@"%d", room.contacts.count);
-                                          [room addContactsObject:contact];
+                                          if (error) {
+                                              
+                                              [self deleteRoom:c.room];
+                                              c.room = nil;
+                                              
+                                              room.badge = [NSNumber numberWithInteger:[room.badge integerValue] - 1];
+                                              [self setBadgeChat: --_badgeChat];
+                                              
+                                          } else {
                                           
-                                          // enter the room
-                                          NSDictionary *parameters = @{@"roomId" : room.rid};
-                                          NSArray *array = [NSArray arrayWithObject:parameters];
-                                          [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
+                                              //contact.room = room;
+                                              room.pending = [NSNumber numberWithInteger:0];
+                                              //NSLog(@"%d", room.contacts.count);
+                                              [room addContactsObject:contact];
+                                              
+                                              // enter the room
+                                              NSDictionary *parameters = @{@"roomId" : room.rid};
+                                              NSArray *array = [NSArray arrayWithObject:parameters];
+                                              [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
+                                          }
                                           
                                           [self saveContext];
                                           
@@ -346,7 +357,10 @@ forRemoteNotification:(NSDictionary *)userInfo
     [room addContactsObject:contact];
     
     room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
-    [self setBadgeChat: ++_badgeChat];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setBadgeChat: ++_badgeChat];
+    });
 
     //[[WebSocketEngine sharedEngine] registerWithChatSocketDelegate:self];
     
@@ -985,8 +999,10 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                           if (![uid isEqualToString:[[ServiceEngine sharedEngine] uid]]) {
                                                               contact.room = room;
                                                               room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-                                                          } else
-                                                              [self deleteRoom:room];                                                          
+                                                          } else {
+                                                              [self deleteRoom:room];
+                                                              contact.room = nil;
+                                                          }
                                                           
                                                       }
                                                       
@@ -1314,7 +1330,7 @@ forRemoteNotification:(NSDictionary *)userInfo
     // use 30 days ago date
     NSDate *start = [[NSDate date] dateByAddingTimeInterval:-30*24*60*60];
     
-    [fetchRequest setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"uuid <> '%@'", uuid], [NSPredicate predicateWithFormat:@"time < %@", start]]]];
+    [fetchRequest setPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"uuid <> '%@'", uuid], [NSPredicate predicateWithFormat:@"time < %@", start], [NSPredicate predicateWithFormat:@"room = nil"]]]];
     
     NSError *error = nil;
     NSArray *results = [_managedObjectContext executeFetchRequest:fetchRequest
@@ -1379,7 +1395,7 @@ forRemoteNotification:(NSDictionary *)userInfo
            andUser:(Contact *)contact {
     
     contact.room = room;
-    room.time = [NSDate date];
+    //room.time = [NSDate date];
     
     [room addContactsObject:contact];
 

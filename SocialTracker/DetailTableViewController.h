@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelCity;
 @property (weak, nonatomic) IBOutlet UILabel *labelAge;
 @property (weak, nonatomic) IBOutlet UILabel *labelGender;
+@property (weak, nonatomic) IBOutlet UILabel *labelBio;
+
 @property (weak, nonatomic) IBOutlet UITableViewCell *cellInfo;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cellTags;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cellBio;

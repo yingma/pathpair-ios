@@ -10,6 +10,7 @@
 #import "NSObject+Event.h"
 #import "ServiceEngine.h"
 #import "AFNetworkReachabilityManager.h"
+#import "PathSenseService.h"
 
 @implementation SignificantLocationService
 
@@ -45,13 +46,12 @@ NSString * const kLocationChangeNotification = @"kLocationChangeNotification";
         // update coordinate of the location
         _location = location;
         
-        
         // update the web service if online
         if ([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] == AFNetworkReachabilityStatusNotReachable)
             return;
         
         // give way to use accurate the position
-        if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways)
+        if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways && [[NSUserDefaults standardUserDefaults] boolForKey:kGPSKey])
             return;
         
         // If the event is recent, do something with it.

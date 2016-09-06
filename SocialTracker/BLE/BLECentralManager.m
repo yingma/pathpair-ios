@@ -92,7 +92,9 @@
     NSLog(@"Start scanning for peripherals");
     
     [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:kBTC2BaseUUID]]
-                                                options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@(NO)}];
+                                                options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@(NO),
+                                                          CBCentralManagerScanOptionSolicitedServiceUUIDsKey:@[
+                                                                  [CBUUID UUIDWithString:kBTC2BaseUUID]]}];
 }
 
 - (void)disconnect:(CBPeripheral *)peripheral {

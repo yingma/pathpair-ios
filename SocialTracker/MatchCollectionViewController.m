@@ -140,9 +140,13 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                         Contact *contact = [_theApp getContactbyUid:uid];
                                                         if (contact == nil) {
                                                             contact = [_theApp newContact];
+                                                            contact.uid = uid;
                                                             contact.flag = [NSNumber numberWithInteger:1]; // new
                                                         } else if (m == nil)
                                                             contact.flag = [NSNumber numberWithInteger:2];
+                                                        
+                                                        //NSLog(@"%@ %d", uid, [contact.flag integerValue]);
+                                                        
                                                         contact.needRefresh = YES;
                                                         
                                                         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -157,7 +161,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                             m.start = [formatter dateFromString:meeting.time];
                                                             m.longitude = [NSNumber numberWithDouble:meeting.longitude];
                                                             m.latitude = [NSNumber numberWithDouble:meeting.latitude];
-                                                        
+                                                            m.contact = contact;
                                                             [contact addMeetingsObject:m];
                                                         }
                                                         
@@ -178,8 +182,8 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                         m.latitude1 = [NSNumber numberWithDouble:meeting.latitude1];
                                                         
                                                         contact.time = [NSDate date];
-                                                        contact.uid = uid;
                                                         
+
                                                         [_theApp saveContext];
                                                         
                                                     }
@@ -193,6 +197,15 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                     
                                                 }
                                                 failure:^(NSError * _Nullable error) {
+                                                    
+                                                    if ([error.userInfo[NSLocalizedDescriptionKey] isEqualToString:@"Request failed: unauthorized (401)"]) {
+                                                        
+                                                        dispatch_async(dispatch_get_main_queue(), ^ {
+                                                            [[ServiceEngine sharedEngine] logout];
+                                                            [_theApp enterLoginSegue];
+                                                        });
+                                                    }
+                                                        
                                                     
                                                      // When done requesting/reloading/processing invoke endRefreshing, to close the control
                                                     [self.refreshControl endRefreshing];
@@ -265,21 +278,13 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                     type:@"self"
                                              withSuccess:^(NSArray<NSString *> * _Nullable tags) {
                                                  
+                                                 [contact removeTags:contact.tags];
+                                                 
                                                  for (NSString *t in tags) {
                                                      
-                                                     BOOL found = NO;
+                                                     Tag * tag = [_theApp newTag:t];
+                                                     [contact addTagsObject:tag];
                                                      
-                                                     for (Tag * tag in contact.tags) {
-                                                         if ([tag.tag isEqualToString:t]) {
-                                                             found = YES;
-                                                             break;
-                                                         }
-                                                     }
-                                                     
-                                                     if (!found) {
-                                                         Tag * tag = [_theApp newTag:t];
-                                                         [contact addTagsObject:tag];
-                                                     }
                                                  }
                                                  
                                                  [_theApp saveContext];
@@ -307,7 +312,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
             cell.labelTimes.text = [NSString stringWithFormat:@"Encounter %u times", contact.meetings.count];
         }
         
-        Meeting *meeting = [contact.meetings firstObject];
+        Meeting *meeting = [contact.meetings lastObject];
         
         cell.labelWhen.text = [meeting.start timeAgo];
         

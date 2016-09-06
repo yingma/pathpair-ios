@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 extern NSString * const kPathChangeNotification;
+extern NSString * const kGPSKey;
 
 @interface PathSenseService : NSObject 
 
@@ -18,5 +19,7 @@ extern NSString * const kPathChangeNotification;
 
 @property (nonatomic, readonly) CLLocation* location;
 @property (nonatomic) bool on;
+
+@property (nonatomic) bool updating;
 
 @end

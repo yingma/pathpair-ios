@@ -406,6 +406,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                  handler:^(UIAlertAction * action) {
                                      assert(_room != nil);
                                      [_theApp deleteRoom:_room];
+                                     
                                      [alert dismissViewControllerAnimated:YES completion:nil];
                                      
                                  }];

@@ -174,10 +174,13 @@
     else if (indexPath.row == 3)
         return 208;
     else if (indexPath.row == 2 && self.contact != nil && ![self.contact.bio isEqualToString:@""]) {
-        CGSize size = [self.contact.bio sizeWithAttributes:
-                       @{NSFontAttributeName: [UIFont systemFontOfSize:16.0f]}];
+        
+        CGSize size = [self.labelBio sizeThatFits:CGSizeMake(self.labelBio.bounds.size.width, 80)];
+        
         return size.height + 24;
-    }
+        
+    } if (indexPath.row == 1)
+        return 64.0;
     
     return 44.0;
     
@@ -196,7 +199,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         controller = [storyboard instantiateViewControllerWithIdentifier:@"map"];
         [controller loadView];
-        controller.meeting = self.contact.meetings[page];
+        controller.meeting = self.contact.meetings[self.contact.meetings.count - page - 1];
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }
     
@@ -341,7 +344,8 @@
                                                     [alert addAction:okAction];
                                               
                                               [self presentViewController:alert animated:YES
-                                                               completion:^ {                                  [_theApp deleteRoom:self.contact.room];
+                                                               completion:^ {
+                                                                   [_theApp deleteRoom:self.contact.room];
                                                                    self.contact.room = nil;
                                                                    [_theApp saveContext];
                                                                }];

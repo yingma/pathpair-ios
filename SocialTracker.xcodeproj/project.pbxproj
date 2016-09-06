@@ -28,14 +28,6 @@
 		84224D171D2D9EF000E77DD8 /* WebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D161D2D9EF000E77DD8 /* WebSocketEngine.m */; };
 		84224D231D2D9FA300E77DD8 /* ServiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D221D2D9FA300E77DD8 /* ServiceMessage.m */; };
 		84396DFC1D3F1C2000DB5830 /* Contact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */; };
-		8451BB881D709E9900BE5812 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8451BB861D709E9900BE5812 /* Interface.storyboard */; };
-		8451BB8A1D709E9900BE5812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8451BB891D709E9900BE5812 /* Assets.xcassets */; };
-		8451BB911D709E9900BE5812 /* SocialTracker Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8451BB901D709E9900BE5812 /* SocialTracker Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8451BB991D709E9900BE5812 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451BB981D709E9900BE5812 /* InterfaceController.m */; };
-		8451BB9C1D709E9900BE5812 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451BB9B1D709E9900BE5812 /* ExtensionDelegate.m */; };
-		8451BB9F1D709E9900BE5812 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451BB9E1D709E9900BE5812 /* NotificationController.m */; };
-		8451BBA11D709E9900BE5812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8451BBA01D709E9900BE5812 /* Assets.xcassets */; };
-		8451BBA51D709E9900BE5812 /* SocialTracker Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8451BB841D709E9800BE5812 /* SocialTracker Watch.app */; };
 		8458AE931CDADE0E004FF4A9 /* ServiceContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458AE921CDADE0E004FF4A9 /* ServiceContact.m */; };
 		84889B181D58AC2200A2AF13 /* ServiceCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = 84889B171D58AC2200A2AF13 /* ServiceCriteria.m */; };
 		848D44CF1D08BB8D00E38395 /* SignupGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D44CE1D08BB8D00E38395 /* SignupGeoViewController.m */; };
@@ -122,20 +114,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8451BB921D709E9900BE5812 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84BD5E941CB5F616002A19F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8451BB8F1D709E9900BE5812;
-			remoteInfo = "SocialTracker Watch Extension";
-		};
-		8451BBA31D709E9900BE5812 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84BD5E941CB5F616002A19F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8451BB831D709E9800BE5812;
-			remoteInfo = "SocialTracker Watch";
-		};
 		84BD5EB91CB5F617002A19F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84BD5E941CB5F616002A19F2 /* Project object */;
@@ -153,24 +131,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		8451BBA91D709E9900BE5812 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				8451BB911D709E9900BE5812 /* SocialTracker Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		84A1243A1CBACC9B00002D12 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				8451BBA51D709E9900BE5812 /* SocialTracker Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,20 +178,6 @@
 		843006191CFFBC0800F4C6E7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		84396DFA1D3F1C2000DB5830 /* Contact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contact+CoreDataProperties.h"; path = "Data/Contact+CoreDataProperties.h"; sourceTree = "<group>"; };
 		84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+CoreDataProperties.m"; path = "Data/Contact+CoreDataProperties.m"; sourceTree = "<group>"; };
-		8451BB841D709E9800BE5812 /* SocialTracker Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialTracker Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8451BB871D709E9900BE5812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		8451BB891D709E9900BE5812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8451BB8B1D709E9900BE5812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8451BB901D709E9900BE5812 /* SocialTracker Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SocialTracker Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8451BB961D709E9900BE5812 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		8451BB971D709E9900BE5812 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		8451BB981D709E9900BE5812 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		8451BB9A1D709E9900BE5812 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
-		8451BB9B1D709E9900BE5812 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
-		8451BB9D1D709E9900BE5812 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		8451BB9E1D709E9900BE5812 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		8451BBA01D709E9900BE5812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8451BBA21D709E9900BE5812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8458AE911CDADE0E004FF4A9 /* ServiceContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceContact.h; path = Http/ServiceContact.h; sourceTree = "<group>"; };
 		8458AE921CDADE0E004FF4A9 /* ServiceContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceContact.m; path = Http/ServiceContact.m; sourceTree = "<group>"; };
 		84889B161D58AC2200A2AF13 /* ServiceCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceCriteria.h; path = Http/ServiceCriteria.h; sourceTree = "<group>"; };
@@ -362,13 +314,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8451BB8D1D709E9900BE5812 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		84BD5E991CB5F616002A19F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,40 +455,6 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		8451BB851D709E9900BE5812 /* SocialTracker Watch */ = {
-			isa = PBXGroup;
-			children = (
-				8451BB861D709E9900BE5812 /* Interface.storyboard */,
-				8451BB891D709E9900BE5812 /* Assets.xcassets */,
-				8451BB8B1D709E9900BE5812 /* Info.plist */,
-			);
-			path = "SocialTracker Watch";
-			sourceTree = "<group>";
-		};
-		8451BB941D709E9900BE5812 /* SocialTracker Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				8451BB971D709E9900BE5812 /* InterfaceController.h */,
-				8451BB981D709E9900BE5812 /* InterfaceController.m */,
-				8451BB9A1D709E9900BE5812 /* ExtensionDelegate.h */,
-				8451BB9B1D709E9900BE5812 /* ExtensionDelegate.m */,
-				8451BB9D1D709E9900BE5812 /* NotificationController.h */,
-				8451BB9E1D709E9900BE5812 /* NotificationController.m */,
-				8451BBA01D709E9900BE5812 /* Assets.xcassets */,
-				8451BBA21D709E9900BE5812 /* Info.plist */,
-				8451BB951D709E9900BE5812 /* Supporting Files */,
-			);
-			path = "SocialTracker Watch Extension";
-			sourceTree = "<group>";
-		};
-		8451BB951D709E9900BE5812 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8451BB961D709E9900BE5812 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		8458AE941CDADE69004FF4A9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,8 +508,6 @@
 				84BD5E9E1CB5F616002A19F2 /* SocialTracker */,
 				84BD5EBB1CB5F617002A19F2 /* SocialTrackerTests */,
 				84BD5EC61CB5F617002A19F2 /* SocialTrackerUITests */,
-				8451BB851D709E9900BE5812 /* SocialTracker Watch */,
-				8451BB941D709E9900BE5812 /* SocialTracker Watch Extension */,
 				84BD5E9D1CB5F616002A19F2 /* Products */,
 				E75045C9C8AF3D24F57124BC /* Pods */,
 				8DB721698F83DAE87C4820BA /* Frameworks */,
@@ -611,8 +520,6 @@
 				84BD5E9C1CB5F616002A19F2 /* Path Pair.app */,
 				84BD5EB81CB5F617002A19F2 /* SocialTrackerTests.xctest */,
 				84BD5EC31CB5F617002A19F2 /* SocialTrackerUITests.xctest */,
-				8451BB841D709E9800BE5812 /* SocialTracker Watch.app */,
-				8451BB901D709E9900BE5812 /* SocialTracker Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -788,40 +695,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8451BB831D709E9800BE5812 /* SocialTracker Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8451BBAA1D709E9900BE5812 /* Build configuration list for PBXNativeTarget "SocialTracker Watch" */;
-			buildPhases = (
-				8451BB821D709E9800BE5812 /* Resources */,
-				8451BBA91D709E9900BE5812 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8451BB931D709E9900BE5812 /* PBXTargetDependency */,
-			);
-			name = "SocialTracker Watch";
-			productName = "SocialTracker Watch";
-			productReference = 8451BB841D709E9800BE5812 /* SocialTracker Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		8451BB8F1D709E9900BE5812 /* SocialTracker Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8451BBA61D709E9900BE5812 /* Build configuration list for PBXNativeTarget "SocialTracker Watch Extension" */;
-			buildPhases = (
-				8451BB8C1D709E9900BE5812 /* Sources */,
-				8451BB8D1D709E9900BE5812 /* Frameworks */,
-				8451BB8E1D709E9900BE5812 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SocialTracker Watch Extension";
-			productName = "SocialTracker Watch Extension";
-			productReference = 8451BB901D709E9900BE5812 /* SocialTracker Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		84BD5E9B1CB5F616002A19F2 /* SocialTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84BD5ECC1CB5F617002A19F2 /* Build configuration list for PBXNativeTarget "SocialTracker" */;
@@ -838,7 +711,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8451BBA41D709E9900BE5812 /* PBXTargetDependency */,
 			);
 			name = SocialTracker;
 			productName = SocialTracker;
@@ -890,14 +762,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Path Pair";
 				TargetAttributes = {
-					8451BB831D709E9800BE5812 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 5G894MD3M3;
-					};
-					8451BB8F1D709E9900BE5812 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 5G894MD3M3;
-					};
 					84BD5E9B1CB5F616002A19F2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 5G894MD3M3;
@@ -939,30 +803,11 @@
 				84BD5E9B1CB5F616002A19F2 /* SocialTracker */,
 				84BD5EB71CB5F617002A19F2 /* SocialTrackerTests */,
 				84BD5EC21CB5F617002A19F2 /* SocialTrackerUITests */,
-				8451BB831D709E9800BE5812 /* SocialTracker Watch */,
-				8451BB8F1D709E9900BE5812 /* SocialTracker Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8451BB821D709E9800BE5812 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8451BB8A1D709E9900BE5812 /* Assets.xcassets in Resources */,
-				8451BB881D709E9900BE5812 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8451BB8E1D709E9900BE5812 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8451BBA11D709E9900BE5812 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		84BD5E9A1CB5F616002A19F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1089,16 +934,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8451BB8C1D709E9900BE5812 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8451BB9C1D709E9900BE5812 /* ExtensionDelegate.m in Sources */,
-				8451BB991D709E9900BE5812 /* InterfaceController.m in Sources */,
-				8451BB9F1D709E9900BE5812 /* NotificationController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		84BD5E981CB5F616002A19F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1181,16 +1016,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8451BB931D709E9900BE5812 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8451BB8F1D709E9900BE5812 /* SocialTracker Watch Extension */;
-			targetProxy = 8451BB921D709E9900BE5812 /* PBXContainerItemProxy */;
-		};
-		8451BBA41D709E9900BE5812 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8451BB831D709E9800BE5812 /* SocialTracker Watch */;
-			targetProxy = 8451BBA31D709E9900BE5812 /* PBXContainerItemProxy */;
-		};
 		84BD5EBA1CB5F617002A19F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84BD5E9B1CB5F616002A19F2 /* SocialTracker */;
@@ -1204,14 +1029,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8451BB861D709E9900BE5812 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8451BB871D709E9900BE5812 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		84BD5EAB1CB5F616002A19F2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1231,80 +1048,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8451BBA71D709E9900BE5812 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "SocialTracker Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		8451BBA81D709E9900BE5812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "SocialTracker Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		8451BBAB1D709E9900BE5812 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				IBSC_MODULE = SocialTracker_Watch_Extension;
-				INFOPLIST_FILE = "SocialTracker Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		8451BBAC1D709E9900BE5812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				IBSC_MODULE = SocialTracker_Watch_Extension;
-				INFOPLIST_FILE = "SocialTracker Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = net.youcast.SocialTracker.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 		84BD5ECA1CB5F617002A19F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1349,6 +1092,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1391,6 +1135,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1547,24 +1292,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8451BBA61D709E9900BE5812 /* Build configuration list for PBXNativeTarget "SocialTracker Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8451BBA71D709E9900BE5812 /* Debug */,
-				8451BBA81D709E9900BE5812 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8451BBAA1D709E9900BE5812 /* Build configuration list for PBXNativeTarget "SocialTracker Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8451BBAB1D709E9900BE5812 /* Debug */,
-				8451BBAC1D709E9900BE5812 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		84BD5E971CB5F616002A19F2 /* Build configuration list for PBXProject "SocialTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
