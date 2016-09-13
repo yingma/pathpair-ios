@@ -78,7 +78,7 @@ extern NSString* const kShowDemo;
 
 - (void) showDetailView:(NSString*) uid
                 andRoom:(NSString*) rid;
-- (void) showChatView:(NSString *)rid;
+- (void) showChatView:(NSString *)rid andContact:(Contact *)c;
 
 - (void)enterMainSegue:(NSInteger)tabIndex;
 - (void)enterLoginSegue;

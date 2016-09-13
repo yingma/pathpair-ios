@@ -15,6 +15,8 @@
 - (void) touchesBegan:(NSSet *)touches
             withEvent:(UIEvent *)event;
 
+-(BOOL) isPasswordValid:(NSString *)pwd;
+
 //- (IBAction)textUserNameValueChanged:(id)sender;
 - (IBAction)textPasswordValueChanged:(id)sender;
 - (IBAction)pick:(id)sender;

@@ -179,8 +179,7 @@
         
         return size.height + 24;
         
-    } if (indexPath.row == 1)
-        return 64.0;
+    }
     
     return 44.0;
     
@@ -314,11 +313,11 @@
     } else if ([self.contact.room.pending integerValue] == 2){
             
 
+//        
+//            NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
+//            NSArray *array = [NSArray arrayWithObject:parameters];
+//            [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
         
-            NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
-            NSArray *array = [NSArray arrayWithObject:parameters];
-            [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
-            
             //enter chat room
             [[ServiceEngine sharedEngine] enterRoom:self.contact.room.rid
                                             andUser:self.contact.uid
@@ -345,6 +344,8 @@
                                               
                                               [self presentViewController:alert animated:YES
                                                                completion:^ {
+                                                                   
+                                                                   [_theApp setBadgeChat:-[self.contact.room.badge integerValue]];
                                                                    [_theApp deleteRoom:self.contact.room];
                                                                    self.contact.room = nil;
                                                                    [_theApp saveContext];
@@ -369,7 +370,7 @@
                                           [_theApp enterRoom1:self.contact.room andUser:c];
                                           
                                           // enter the chat room
-                                          NSDictionary *parameters = @{@"roomId" : self.contact.room.rid, @"userId" : [[ServiceEngine sharedEngine] uid]};
+                                          NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
                                           NSArray *array = [NSArray arrayWithObject:parameters];
                                           [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                       

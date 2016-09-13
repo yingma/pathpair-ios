@@ -223,11 +223,25 @@ forRemoteNotification:(NSDictionary *)userInfo
     
     //room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
     if (contact == nil) {
+        
         contact = [self newContact];
         contact.uid = uid;
-        contact.time = [NSDate date];
         contact.needRefresh = YES;
+        
+    } else if (contact.room != nil && ![contact.room.rid isEqualToString:rid]) {
+        
+
+        NSDictionary *parameters = @{@"roomId" : contact.room.rid};
+        NSArray *array = [NSArray arrayWithObject:parameters];
+        [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
+        
+        _badgeChat -= [contact.room.badge integerValue];
+        [self deleteRoom:contact.room];
+        contact.room = nil;
+        
+        [self saveContext];
     }
+
     
     Room * room = [self getRoom:rid];
     if (room == nil) {
@@ -299,13 +313,23 @@ forRemoteNotification:(NSDictionary *)userInfo
 
     } else if ([identifier isEqualToString:NotificationActionReject]) {
         
-        [self deleteRoom:room];
-        contact.room = nil;
         
-        room.badge = [NSNumber numberWithInteger:[room.badge integerValue] - 1];
-        [self setBadgeChat: --_badgeChat];
-        
-        [self saveContext];
+//        NSString *const kMessageSequence = @"MessageSequence";
+//        
+//        NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
+//        NSDictionary *parameters = @{kAppSocketRoomId: contact.room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
+//        NSArray *array = [NSArray arrayWithObject:parameters];
+//        [[WebSocketEngine sharedEngine] emitWithAck:@"send"
+//                                               args:array
+//                              withCompletionHandler:^() {
+//                                  
+//                                  [self setBadgeChat:-[contact.room.badge integerValue]];
+//                                  contact.room.badge = [NSNumber numberWithInteger:0];
+//                    
+//                                  [self deleteRoom:contact.room];
+//                                  contact.room = nil;
+//                                  [self saveContext];
+//                              }];
     }
     
     if (completionHandler) {
@@ -333,20 +357,41 @@ forRemoteNotification:(NSDictionary *)userInfo
     NSString* rid = [aps objectForKey:@"r"];
     NSString* type = [aps objectForKey:@"t"];
     
+    
+    // handle contact
+    Contact *contact = [self getContactbyUid:uid];
+    
+    if (contact == nil) {
+        
+        contact = [self newContact];
+        contact.uid = uid;
+        contact.needRefresh = YES;
+        
+    } else if (contact.room != nil && ![contact.room.rid isEqualToString:rid]) {
+        
+
+        
+        NSDictionary *parameters = @{@"roomId" : contact.room.rid};
+        NSArray *array = [NSArray arrayWithObject:parameters];
+        [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
+        
+        
+        _badgeChat -= [contact.room.badge integerValue];
+        
+        [self deleteRoom:contact.room];
+        contact.room = nil;
+        
+        [self saveContext];
+        
+    }
+    
+    // make a new room
     Room * room = [self getRoom:rid];
     
     if (room == nil) {
         room = [self newRoom];
         room.rid = rid;
         room.pending = [NSNumber numberWithInteger:2];
-    }
-    
-    Contact *contact = [self getContactbyUid:uid];
-    
-    if (contact == nil) {
-        contact = [self newContact];
-        contact.uid = uid;
-        contact.needRefresh = YES;
     }
     
     room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
@@ -358,9 +403,7 @@ forRemoteNotification:(NSDictionary *)userInfo
     
     room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self setBadgeChat: ++_badgeChat];
-    });
+    [self setBadgeChat: ++_badgeChat];
 
     //[[WebSocketEngine sharedEngine] registerWithChatSocketDelegate:self];
     
@@ -426,9 +469,9 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                                      NSDictionary *parameters = @{@"roomId" : room.rid};
                                                                      NSArray *array = [NSArray arrayWithObject:parameters];
                                                                      [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
-                                                                     
+           
                                                                      dispatch_async(dispatch_get_main_queue(), ^{
-                                                                         [self setBadgeChat: --_badgeChat];
+                                                                          [self setBadgeChat: --_badgeChat];
                                                                      });
                                                                      
                                                                      //NSLog(@"%d", room.contacts.count);
@@ -483,13 +526,11 @@ forRemoteNotification:(NSDictionary *)userInfo
         
     } else {
         
-        application.applicationIconBadgeNumber ++;
-        
         if ([kInviteSNSType isEqualToString:type])
             [self showDetailView:uid
                          andRoom:rid];
-        else if ([kMessageSNSType isEqualToString:type])
-            [self showChatView:rid];
+//        else if ([kMessageSNSType isEqualToString:type])
+//            [self showChatView:rid andContact:contact];
         else if ([kPairSNSType isEqualToString:type])
             [self setBadgeMatch:++_badgeMatch];
     }
@@ -511,16 +552,17 @@ forRemoteNotification:(NSDictionary *)userInfo
 //                andUser:uid];
         
     }
-
     
 }
 
-- (void) showChatView:(NSString *)rid {
+- (void) showChatView:(NSString *)rid andContact:(Contact *)c {
     
     // change root view controler
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    ChatViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"chat"];
+    ChatViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"room"];
+    
+    viewController.title = [NSString stringWithFormat:@"%@ %@", c.firstname, c.lastname];
     
     viewController.room = [self getRoom:rid];
     
@@ -603,7 +645,7 @@ forRemoteNotification:(NSDictionary *)userInfo
                             [contact addMeetingsObject:m];
                         }
                               
-                        if (meeting.lengthInMinutes != 0)
+                        if (meeting.lengthInMinutes >= 1)
                             m.length = [NSNumber numberWithFloat:meeting.lengthInMinutes];
                         else { // when length is zero, calc minutes on the fly
                             NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:m.start];
@@ -715,8 +757,9 @@ forRemoteNotification:(NSDictionary *)userInfo
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     _inBackgroundMode = NO;
 
-    
     application.applicationIconBadgeNumber = 0;
+    
+    _badgeChat = 0;
     
     // pull the message
     NSArray<Room *> * rooms = [self getRooms];
@@ -752,7 +795,9 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                       [self enterRoom:room.rid
                                                               andUser:[[ServiceEngine sharedEngine] uid]];
                                                       
-                                                      [self setBadgeChat:++_badgeChat];
+                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                          [self setBadgeChat:++_badgeChat];
+                                                      });
                                                       
                                                   }
                                                   
@@ -772,7 +817,6 @@ forRemoteNotification:(NSDictionary *)userInfo
                                   andLastMessageId:mid
                                        withSuccess:^(NSArray<ServiceMessage *> * _Nullable messages) {
                                            
-                                           int count = 0;
                                            
                                            for (int i = 0; i < messages.count; i++) {
                                                
@@ -782,10 +826,9 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                               andSequence:m.sequence] != nil)
                                                    continue;
                                                
-                                               if (![m.uid isEqualToString:[ServiceEngine sharedEngine].uid]) {
+                                               if (![m.uid isEqualToString:[ServiceEngine sharedEngine].uid])
                                                    room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
-                                                   count ++;
-                                               }
+                                               
                                                
                                                Message* message = [self newMessage:m.text
                                                                            andUser:m.uid];
@@ -811,7 +854,7 @@ forRemoteNotification:(NSDictionary *)userInfo
                                            
 //                                          room.time = [NSDate date];
                                                
-                                            _badgeChat += count;
+                                            _badgeChat += [room.badge integerValue];
                                                
                                             dispatch_async(dispatch_get_main_queue(), ^{
                                                 [self setBadgeChat:_badgeChat];

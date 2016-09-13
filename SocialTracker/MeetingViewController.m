@@ -2,7 +2,7 @@
 //  MeetingViewController.m
 //  SocialTracker
 //
-//  Created by Admin on 6/24/16.
+//  Created by Ying Ma on 6/24/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 
@@ -38,6 +38,7 @@
         
         if ([meeting.latitude doubleValue] == 0 || [meeting.longitude doubleValue] == 0)
             startPoint = endPoint;
+        
         
         // create a placemark and map item for your start point
         MKPlacemark *startPlacemark = [[MKPlacemark alloc]initWithCoordinate:startPoint addressDictionary:nil];

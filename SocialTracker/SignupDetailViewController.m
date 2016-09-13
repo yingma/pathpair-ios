@@ -264,7 +264,45 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         }
 }
 
+-(BOOL) isPasswordValid:(NSString *)pwd {
+    if ( [pwd length]<6 || [pwd length]>32 ) return NO;  // too long or too short
+    
+    NSRange rang;
+    rang = [pwd rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]];
+    if ( !rang.length )
+        return NO;  // no letter
+    
+    rang = [pwd rangeOfCharacterFromSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if ( !rang.length )
+        return NO;  // no number;
+    
+    return YES;
+}
+
 - (IBAction)signup:(id)sender {
+    
+    if (![self isPasswordValid:self.textPassword.text]) {
+        
+        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Your password is too weak :("
+                                                                         message:@""
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:^{[self.textPassword becomeFirstResponder];}];
+        
+        return;
+    }
     
     if (_contact != nil) {
         

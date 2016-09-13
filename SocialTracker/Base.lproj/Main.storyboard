@@ -97,7 +97,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSE-5e-P52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-366" y="-1302"/>
+            <point key="canvasLocation" x="-339" y="-949"/>
         </scene>
         <!--Contents Controller-->
         <scene sceneID="BSn-NJ-gr9">
@@ -1491,6 +1491,11 @@ Please choose how you would like to reset your password:</string>
                                     <action selector="signup:" destination="CgG-cu-zcW" eventType="touchUpInside" id="bdH-av-d9r"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least one numeric value and one letter and 6 chars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TO-jB-JU2">
+                                <rect key="frame" x="16" y="273" width="280" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1501,7 +1506,9 @@ Please choose how you would like to reset your password:</string>
                             <constraint firstItem="wgb-De-fzQ" firstAttribute="leading" secondItem="IhC-hH-grk" secondAttribute="leadingMargin" id="LJK-9i-u03"/>
                             <constraint firstItem="D1j-sd-3i8" firstAttribute="leading" secondItem="IhC-hH-grk" secondAttribute="leadingMargin" id="Oci-vg-Bgp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZtM-kZ-t48" secondAttribute="trailing" constant="-20" id="Qg8-aS-lRC"/>
+                            <constraint firstItem="4TO-jB-JU2" firstAttribute="leading" secondItem="wgb-De-fzQ" secondAttribute="leading" id="WDp-1h-7yY"/>
                             <constraint firstItem="Q3Q-lw-dpf" firstAttribute="top" secondItem="wgb-De-fzQ" secondAttribute="bottom" constant="29" id="aNi-74-XLK"/>
+                            <constraint firstItem="4TO-jB-JU2" firstAttribute="top" secondItem="wgb-De-fzQ" secondAttribute="bottom" constant="4" id="fMB-hO-F63"/>
                             <constraint firstItem="ZtM-kZ-t48" firstAttribute="leading" secondItem="IhC-hH-grk" secondAttribute="leadingMargin" constant="-20" id="loc-TL-pun"/>
                             <constraint firstItem="wHU-M0-2Q5" firstAttribute="centerX" secondItem="IhC-hH-grk" secondAttribute="centerX" id="rDg-Pp-D7c"/>
                             <constraint firstItem="W8o-8E-eoU" firstAttribute="top" secondItem="ZtM-kZ-t48" secondAttribute="bottom" id="x3Y-tq-KBt"/>

@@ -26,7 +26,15 @@ NSString * const kLocationChangeNotification = @"kLocationChangeNotification";
     // Only report to location manager if the user has traveled 100 meters
     self.locationManager.distanceFilter = 100.0f;
     self.locationManager.delegate = self;
-    self.locationManager.activityType = CLActivityTypeOther;
+    self.locationManager.activityType = CLActivityTypeFitness;
+    
+    if ([_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) { // iOS 8 or later
+        [_locationManager requestAlwaysAuthorization];
+    }
+    
+    if ([_locationManager respondsToSelector:@selector(allowsBackgroundLocationUpdates)]) {  // iOS 9 or later
+        [_locationManager setAllowsBackgroundLocationUpdates:YES];
+    }
     
     self.locationManager.delegate = self;
     [self.locationManager startMonitoringSignificantLocationChanges];
@@ -50,8 +58,8 @@ NSString * const kLocationChangeNotification = @"kLocationChangeNotification";
         if ([[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus] == AFNetworkReachabilityStatusNotReachable)
             return;
         
-        // give way to use accurate the position
-        if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways && [[NSUserDefaults standardUserDefaults] boolForKey:kGPSKey])
+        // give way to use more accurate position service
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:kGPSKey])
             return;
         
         // If the event is recent, do something with it.

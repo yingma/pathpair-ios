@@ -175,6 +175,7 @@
     else {
         
         Contact *contact = [_theApp getContactbyUid:message.uid];
+        NSLog(@"%@", message.uid);
         
 //        if (contact.image == nil)
             [[ServiceEngine sharedEngine] downloadPhoto:contact.photourl
@@ -319,6 +320,8 @@ NSString *const kMessageSequence       = @"MessageSequence";
     [[WebSocketEngine sharedEngine] emitWithAck:@"send"
                                            args:array
                           withCompletionHandler:^() {
+                              
+                              NSLog(@"%@", array);
                               
                           }];
     

@@ -681,7 +681,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                            andUser:contact];
 
                                                //enter chat room
-                                               NSDictionary *parameters = @{@"roomId" : roomid, @"userId" : [[ServiceEngine sharedEngine] uid]};
+                                               NSDictionary *parameters = @{@"roomId" : roomid};
                                                NSArray *array = [NSArray arrayWithObject:parameters];
                                                [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                                
@@ -733,10 +733,13 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                 [alert addAction:okAction];
                                               
                                                 [self presentViewController:alert animated:YES completion:^{
+                                                            
+                                                        [_theApp setBadgeChat:-[contact.room.badge integerValue]];
                                                         [_theApp deleteRoom:contact.room];
                                                         contact.room = nil;
                                                         [_theApp saveContext];
-                                                    }];
+                                        
+                                                 }];
                                             });
                                                                                   
                                             return;
@@ -757,7 +760,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                       
                                       
                                         // enter the room
-                                        NSDictionary *parameters = @{@"roomId" : contact.room.rid, @"userId" : [[ServiceEngine sharedEngine] uid]};
+                                        NSDictionary *parameters = @{@"roomId" : contact.room.rid};
                                         NSArray *array = [NSArray arrayWithObject:parameters];
                                         [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                       
@@ -788,14 +791,16 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                   NSArray *array = [NSArray arrayWithObject:parameters];
                                   [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
                                   
+                                  [_theApp setBadgeChat:-[contact.room.badge integerValue]];
+                                  contact.room.badge = [NSNumber numberWithInteger:0];
+                                  
                                   [_theApp deleteRoom:contact.room];
                                   contact.room = nil;
                                   [_theApp saveContext];
                               }];
         
         
-        [_theApp setBadgeChat:-[contact.room.badge integerValue]];
-        contact.room.badge = [NSNumber numberWithInteger:0];
+
         
         
 //        [[ServiceEngine sharedEngine] leaveRoom:contact.room.rid

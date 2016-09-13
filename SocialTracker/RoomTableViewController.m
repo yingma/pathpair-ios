@@ -150,7 +150,7 @@
                                [contact addMeetingsObject:m];
                            }
                            
-                           if (meeting.lengthInMinutes != 0)
+                           if (meeting.lengthInMinutes >= 1)
                                m.length = [NSNumber numberWithFloat:meeting.lengthInMinutes];
                            else { // when length is zero, calc minutes on the fly
                                NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:m.start];

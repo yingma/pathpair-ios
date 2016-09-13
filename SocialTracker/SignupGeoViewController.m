@@ -133,6 +133,9 @@
                                                                           */
                                                                          NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:kUUIDKey];
                                                                          _contact.uuid = uuid;
+                                                                         
+                                                                         NSString *uid = [[NSUserDefaults standardUserDefaults] stringForKey:kUIDKey];
+                                                                         _contact.uid = uid;
                                                                          [_theApp saveContext];
                                                                          
                                                                          /**
@@ -163,6 +166,8 @@
                                                                                                                    [alert addAction:ok];
                                                                                                                    
                                                                                                                }
+                                                                                                               
+                                                                                                               if ([[NSUserDefaults standardUserDefaults] dataForKey:kPhotoKey] != nil)
                                                                                                                /**
                                                                                                                 * upload to image
                                                                                                                 */
@@ -202,7 +207,14 @@
                                                                                                                                                    });
                                                                                                                                                    
                                                                                                                                                                                                                                                                                                       
-                                                                                                                                               }];
+                                                                                                                }];
+                                                                                                               
+                                                                                                                else
+                                                                                                                    // all set active the main segue
+                                                                                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                                        [_theApp enterMainSegue:1];
+                                                                                                                    });
+
                                                                                                                
                                                                                                            }];
                                                                          

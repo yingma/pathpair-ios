@@ -455,8 +455,8 @@
                   symbolName = "-[ServiceEngine signup:andPass:doneBlock:]"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.571654"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.885658"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "432"
@@ -470,8 +470,8 @@
                   symbolName = "__42-[ServiceEngine signup:andPass:doneBlock:]_block_invoke.283"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.571779"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.885754"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "432"
@@ -583,28 +583,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocialTracker/SettingTableViewController.m"
-            timestampString = "494108151.162489"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -616,11 +600,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "-gotoPage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -743,8 +727,8 @@
                   symbolName = "-[ServiceEngine forgetPassword:doneBlock:]"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.58134"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.891377"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
@@ -758,8 +742,8 @@
                   symbolName = "__42-[ServiceEngine forgetPassword:doneBlock:]_block_invoke"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.581451"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.89152"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
@@ -904,11 +888,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -984,12 +968,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "525"
-            endingLineNumber = "525"
-            landmarkName = "-showChatView:"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
+            landmarkName = "-showChatView:andContact:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1000,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "516"
-            endingLineNumber = "516"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1063,8 +1047,8 @@
                   symbolName = "__41-[ServiceEngine login:andPass:doneBlock:]_block_invoke"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.590686"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.898562"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1078,8 +1062,8 @@
                   symbolName = "__copy_helper_block_"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.590792"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.898691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1093,8 +1077,8 @@
                   symbolName = "__destroy_helper_block_"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "494796491.590882"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
+                  timestampString = "495373906.898791"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
@@ -1127,11 +1111,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1547"
-            endingLineNumber = "1547"
+            startingLineNumber = "1590"
+            endingLineNumber = "1590"
             landmarkName = "-enterLoginSegue"
             landmarkType = "5">
          </BreakpointContent>
@@ -1143,11 +1127,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494436636.36612"
+            timestampString = "495339856.481953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1159,27 +1143,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494545671.101913"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
+            startingLineNumber = "511"
+            endingLineNumber = "511"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1191,11 +1159,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "580"
-            endingLineNumber = "580"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
             landmarkName = "-showDetailView:andRoom:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1207,11 +1175,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1522"
-            endingLineNumber = "1522"
+            startingLineNumber = "1565"
+            endingLineNumber = "1565"
             landmarkName = "-enterMainSegue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1418,38 +1386,6 @@
             timestampString = "493834816.777211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
-            landmarkName = "-loginFacebook:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/LoginViewController.m"
-            timestampString = "493834816.777211"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
-            landmarkName = "-loginFacebook:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/LoginViewController.m"
-            timestampString = "493834816.777211"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "434"
             endingLineNumber = "434"
             landmarkName = "-loginFacebook:"
@@ -1495,11 +1431,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1511,11 +1447,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1559,11 +1495,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "494814733.05056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1575,11 +1511,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494545671.101913"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1591,11 +1527,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1639,11 +1575,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "763"
-            endingLineNumber = "763"
+            startingLineNumber = "766"
+            endingLineNumber = "766"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
             <Locations>
@@ -1651,45 +1587,45 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke.604"
+                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke.600"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.608782"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.911898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "764"
-                  endingLineNumber = "764"
-                  offsetFromSymbolStart = "1360">
+                  startingLineNumber = "767"
+                  endingLineNumber = "767"
+                  offsetFromSymbolStart = "1244">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.627"
+                  symbolName = "__copy_helper_block_.623"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.608892"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.911993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "764"
-                  endingLineNumber = "764"
+                  startingLineNumber = "767"
+                  endingLineNumber = "767"
                   offsetFromSymbolStart = "204">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.628"
+                  symbolName = "__destroy_helper_block_.624"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.608987"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.912076"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "764"
-                  endingLineNumber = "764"
+                  startingLineNumber = "767"
+                  endingLineNumber = "767"
                   offsetFromSymbolStart = "104">
                </Location>
             </Locations>
@@ -1702,11 +1638,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "767"
-            endingLineNumber = "767"
+            startingLineNumber = "770"
+            endingLineNumber = "770"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1766,11 +1702,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494545671.101913"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1878,11 +1814,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1894,11 +1830,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "763"
-            endingLineNumber = "763"
+            startingLineNumber = "808"
+            endingLineNumber = "808"
             landmarkName = "-applicationDidBecomeActive:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1910,11 +1846,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "762"
-            endingLineNumber = "762"
+            startingLineNumber = "807"
+            endingLineNumber = "807"
             landmarkName = "-applicationDidBecomeActive:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1926,11 +1862,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "677"
+            endingLineNumber = "677"
             landmarkName = "-showDetailView:andRoom:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1942,11 +1878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1578"
-            endingLineNumber = "1578"
+            startingLineNumber = "1621"
+            endingLineNumber = "1621"
             landmarkName = "-enterRoomSegue:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1958,11 +1894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1627"
-            endingLineNumber = "1627"
+            startingLineNumber = "1670"
+            endingLineNumber = "1670"
             landmarkName = "-socketDidReceiveMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1974,11 +1910,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1651"
-            endingLineNumber = "1651"
+            startingLineNumber = "1694"
+            endingLineNumber = "1694"
             landmarkName = "-socketDidReceiveMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1990,11 +1926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "494223302.879491"
+            timestampString = "495257899.405203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "347"
-            endingLineNumber = "347"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2102,11 +2038,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494545671.101913"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2118,11 +2054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2166,11 +2102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1378"
-            endingLineNumber = "1378"
+            startingLineNumber = "1421"
+            endingLineNumber = "1421"
             landmarkName = "-enterRoom:andUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2182,11 +2118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2210,7 +2146,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
@@ -2230,11 +2166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "494223302.879491"
+            timestampString = "495257899.405203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
             <Locations>
@@ -2245,27 +2181,27 @@
                   symbolName = "-[ChatViewController messageDidChange:]"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/ChatViewController.m"
-                  timestampString = "494796491.624578"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/ChatViewController.m"
+                  timestampString = "495373906.923418"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "346"
-                  endingLineNumber = "346"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
                   offsetFromSymbolStart = "580">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[ChatViewController messageDidChange:]_block_invoke.193"
+                  symbolName = "__39-[ChatViewController messageDidChange:]_block_invoke.196"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/ChatViewController.m"
-                  timestampString = "494796491.624695"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/ChatViewController.m"
+                  timestampString = "495373906.923518"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "346"
-                  endingLineNumber = "346"
+                  startingLineNumber = "349"
+                  endingLineNumber = "349"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -2278,11 +2214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "494223302.879491"
+            timestampString = "495257899.405203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2310,11 +2246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "771"
-            endingLineNumber = "771"
+            startingLineNumber = "774"
+            endingLineNumber = "774"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2326,11 +2262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "781"
-            endingLineNumber = "781"
+            startingLineNumber = "784"
+            endingLineNumber = "784"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2342,11 +2278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2358,11 +2294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645136.776913"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2374,11 +2310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "780"
-            endingLineNumber = "780"
+            startingLineNumber = "783"
+            endingLineNumber = "783"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
             <Locations>
@@ -2386,30 +2322,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke.640"
+                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke.636"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.628584"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.92645"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "780"
-                  endingLineNumber = "780"
+                  startingLineNumber = "783"
+                  endingLineNumber = "783"
                   offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke_2.641"
+                  symbolName = "__51-[MatchCollectionViewController likeButtonPressed:]_block_invoke_2.637"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.628705"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.926647"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "780"
-                  endingLineNumber = "780"
+                  startingLineNumber = "783"
+                  endingLineNumber = "783"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -2422,11 +2358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "-application:didReceiveRemoteNotification:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2438,11 +2374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494553004.386582"
+            timestampString = "495343305.202821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1616"
-            endingLineNumber = "1616"
+            startingLineNumber = "1659"
+            endingLineNumber = "1659"
             landmarkName = "-socketDidReceiveMessage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2470,11 +2406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "753"
-            endingLineNumber = "753"
+            startingLineNumber = "756"
+            endingLineNumber = "756"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2518,11 +2454,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494796491.3796"
+            timestampString = "495291166.755877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "775"
-            endingLineNumber = "775"
+            startingLineNumber = "778"
+            endingLineNumber = "778"
             landmarkName = "-likeButtonPressed:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2534,11 +2470,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494451893.172798"
+            timestampString = "495339856.481953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2550,60 +2486,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "494438500.907836"
+            timestampString = "495257899.405203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
             landmarkName = "-didPressSendButton:withMessageText:senderId:senderDisplayName:date:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494626707.171603"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-refresh:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494637108.520109"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-refresh:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialTracker/DetailTableViewController.m"
-            timestampString = "494645125.218589"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2645,22 +2533,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocialTracker/AppDelegate.m"
-            timestampString = "494770267.503067"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
             timestampString = "494796491.3796"
             startingColumnNumber = "9223372036854775807"
@@ -2674,11 +2546,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__41-[MatchCollectionViewController refresh:]_block_invoke.179"
+                  symbolName = "__41-[MatchCollectionViewController refresh:]_block_invoke.173"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.63767"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.933239"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "203"
@@ -2689,11 +2561,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__41-[MatchCollectionViewController refresh:]_block_invoke_2.186"
+                  symbolName = "__41-[MatchCollectionViewController refresh:]_block_invoke_2.180"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/SocialTracker/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "494796491.63779"
+                  urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
+                  timestampString = "495373906.93334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "203"
@@ -2757,13 +2629,205 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494794992.990052"
+            filePath = "SocialTracker/RoomTableViewController.m"
+            timestampString = "494869121.114634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-refresh:"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-prepareForSegue:sender:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/RoomTableViewController.m"
+            timestampString = "494869279.844954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495343305.202821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "527"
+            endingLineNumber = "527"
+            landmarkName = "-application:didReceiveRemoteNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495343305.202821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "-application:didReceiveRemoteNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/GPS/PathSenseService.m"
+            timestampString = "494902977.297067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/GPS/PathSenseService.m"
+            timestampString = "494902962.526417"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495343305.202821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "-application:didReceiveRemoteNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/GPS/SignificantLocationService.m"
+            timestampString = "494942083.884925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-locationManager:didUpdateLocations:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/GPS/SignificantLocationService.m"
+            timestampString = "494906179.182933"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-startSignificantChangeUpdates"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/GPS/PathSenseService.m"
+            timestampString = "494951045.746054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-setOn:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/Http/WebSocketEngine.m"
+            timestampString = "494976057.940422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-close"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/DetailTableViewController.m"
+            timestampString = "495291166.755877"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "-doLike:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/Http/ServiceEngine.m"
+            timestampString = "495070348.962854"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2774,12 +2838,156 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/MatchCollectionViewController.m"
-            timestampString = "494794997.762303"
+            timestampString = "495077192.978501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-refresh:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/SignupDetailViewController.m"
+            timestampString = "495241361.896015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495340261.036606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495339994.164437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495339995.170231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495340401.875878"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "495340410.661929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "-application:handleActionWithIdentifier:forRemoteNotification:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/Http/WebSocketEngine.m"
+            timestampString = "495344153.172984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-emitWithAck:args:withCompletionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/DetailTableViewController.m"
+            timestampString = "495345835.597462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
+            landmarkName = "-doLike:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/DetailTableViewController.m"
+            timestampString = "495345836.129841"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "-doLike:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

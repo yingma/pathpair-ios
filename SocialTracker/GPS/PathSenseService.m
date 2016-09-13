@@ -38,37 +38,6 @@ NSString * const kGPSKey = @"GPS";
     
     if ((self = [super init])) {
         
-//        [PSLocation setApiKey:@"tRYuPbGcnY9KZ8kbcz50C74t0NPCxRr5LBSgg7K3" andClientID:@"rFtTNi7Xz4pyAq2jIaeMsCU9jYzjxPcCMytSrN5a"];
-        
-//        _locations = [NSMutableArray array];
-        
-//        _locationManager = [PSLocationManager new];
-        
-        // Create the location manager if this object does not
-        // already have one.
-        if (nil == self.locationManager)
-            self.locationManager = [[CLLocationManager alloc] init];
-        
-        [_locationManager setDelegate:self];
-//       [_locationManager setMaximumLatency:20];
-        [_locationManager setPausesLocationUpdatesAutomatically:NO];
-        [_locationManager setDistanceFilter:50];
-        
-//        if ([CMMotionActivityManager isActivityAvailable]) {
-//            [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-//        } else {
-//            [_locationManager setDesiredAccuracy:kPSLocationAccuracyPathSenseNavigation];
-//        }
-        
-        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-        
-        if ([_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) { // iOS 8 or later
-            [_locationManager requestAlwaysAuthorization];
-        }
-        
-        if ([_locationManager respondsToSelector:@selector(allowsBackgroundLocationUpdates)]) {  // iOS 9 or later
-            [_locationManager setAllowsBackgroundLocationUpdates:YES];
-        }
         NSNumber * onGPS = [[NSUserDefaults standardUserDefaults] objectForKey:kGPSKey];
         
         if (onGPS == nil) {
@@ -76,6 +45,32 @@ NSString * const kGPSKey = @"GPS";
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kGPSKey];
         } else
             _on = [[NSUserDefaults standardUserDefaults] boolForKey:kGPSKey];
+        
+        [self setOn:_on];
+
+        
+//        [PSLocation setApiKey:@"tRYuPbGcnY9KZ8kbcz50C74t0NPCxRr5LBSgg7K3" andClientID:@"rFtTNi7Xz4pyAq2jIaeMsCU9jYzjxPcCMytSrN5a"];
+        
+//        _locations = [NSMutableArray array];
+        
+//        _locationManager = [PSLocationManager new];
+        
+//        // Create the location manager if this object does not
+//        // already have one.
+//        if (nil == self.locationManager)
+//            self.locationManager = [[CLLocationManager alloc] init];
+//        
+//        [_locationManager setDelegate:self];
+////       [_locationManager setMaximumLatency:20];
+//        [_locationManager setPausesLocationUpdatesAutomatically:NO];
+//        [_locationManager setDistanceFilter:50];
+//        
+////        if ([CMMotionActivityManager isActivityAvailable]) {
+////            [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+////        } else {
+////            [_locationManager setDesiredAccuracy:kPSLocationAccuracyPathSenseNavigation];
+////        }
+    
         
     }
     return self;
@@ -85,11 +80,33 @@ NSString * const kGPSKey = @"GPS";
     
     if (on) {
         _on = YES;
+        
+        if (nil == self.locationManager)
+            self.locationManager = [[CLLocationManager alloc] init];
+        
+        if ([_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) { // iOS 8 or later
+            [_locationManager requestAlwaysAuthorization];
+        }
+        
+        if ([_locationManager respondsToSelector:@selector(allowsBackgroundLocationUpdates)]) {  // iOS 9 or later
+            [_locationManager setAllowsBackgroundLocationUpdates:YES];
+        }
+        
+        [_locationManager setDelegate:self];
+        //       [_locationManager setMaximumLatency:20];
+        [_locationManager setPausesLocationUpdatesAutomatically:NO];
+        [_locationManager setDistanceFilter:50];
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+        
+
+
         [_locationManager startUpdatingLocation];
         
     } else {
         _on = NO;
-        [_locationManager stopUpdatingLocation];
+        
+        if (nil != _locationManager)
+            [_locationManager stopUpdatingLocation];
     }
     
     [[NSUserDefaults standardUserDefaults] setBool:on
