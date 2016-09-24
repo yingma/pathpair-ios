@@ -1419,9 +1419,9 @@ forRemoteNotification:(NSDictionary *)userInfo
     Room *room = [self getRoom:rid];
     Contact *contact = [self getContactbyUid:uid];
     
-    if (contact.rooms.count > 0) {
-        [contact.rooms allObjects][0].rid = rid;
-    }
+//    if (contact.rooms.count > 0) {
+//        [contact.rooms allObjects][0].rid = rid;
+//    }
     
 //    if (contact.room != nil)
 //        contact.room.rid = rid;

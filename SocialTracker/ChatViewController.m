@@ -68,6 +68,8 @@
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     
     assert(self.room != nil);
+    
+    NSLog(@"enter room %@", self.room.rid);
     //self.title = self.room.name;
 }
 

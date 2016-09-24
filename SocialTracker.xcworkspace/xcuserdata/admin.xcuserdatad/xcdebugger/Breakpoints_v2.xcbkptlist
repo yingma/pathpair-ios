@@ -456,12 +456,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.483481"
+                  timestampString = "496444923.338841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "432"
                   endingLineNumber = "432"
-                  offsetFromSymbolStart = "400">
+                  offsetFromSymbolStart = "412">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -471,12 +471,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.483585"
+                  timestampString = "496444923.338969"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "432"
                   endingLineNumber = "432"
-                  offsetFromSymbolStart = "14">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -728,12 +728,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.491099"
+                  timestampString = "496444923.346382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "270">
+                  offsetFromSymbolStart = "252">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -743,12 +743,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.49128"
+                  timestampString = "496444923.346499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "199"
                   endingLineNumber = "199"
-                  offsetFromSymbolStart = "14">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1016,12 +1016,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.49934"
+                  timestampString = "496444923.356305"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
                   endingLineNumber = "182"
-                  offsetFromSymbolStart = "756">
+                  offsetFromSymbolStart = "748">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1031,12 +1031,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.499461"
+                  timestampString = "496444923.356432"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
                   endingLineNumber = "182"
-                  offsetFromSymbolStart = "62">
+                  offsetFromSymbolStart = "100">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1046,12 +1046,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/Http/ServiceEngine.m"
-                  timestampString = "496362208.499567"
+                  timestampString = "496444923.356535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "182"
                   endingLineNumber = "182"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1413,12 +1413,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.511053"
+                  timestampString = "496444923.36861"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "282"
                   endingLineNumber = "282"
-                  offsetFromSymbolStart = "174">
+                  offsetFromSymbolStart = "260">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1428,12 +1428,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.511179"
+                  timestampString = "496444923.36872"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "282"
                   endingLineNumber = "282"
-                  offsetFromSymbolStart = "30">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1797,12 +1797,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.523014"
+                  timestampString = "496444923.382608"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "1468">
+                  offsetFromSymbolStart = "1424">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1812,12 +1812,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.523137"
+                  timestampString = "496444923.382739"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "116">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1827,12 +1827,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.523242"
+                  timestampString = "496444923.382843"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1842,12 +1842,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.523343"
+                  timestampString = "496444923.382948"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "785"
                   endingLineNumber = "785"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1875,12 +1875,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.524416"
+                  timestampString = "496444923.384002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "1468">
+                  offsetFromSymbolStart = "1424">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1890,12 +1890,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.524514"
+                  timestampString = "496444923.3841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "116">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1905,12 +1905,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.524601"
+                  timestampString = "496444923.384197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "783"
                   endingLineNumber = "783"
-                  offsetFromSymbolStart = "38">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1920,12 +1920,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.524685"
+                  timestampString = "496444923.38428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "785"
                   endingLineNumber = "785"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1969,11 +1969,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "495663128.088113"
+            timestampString = "496441413.274363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2177,11 +2177,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "495663128.088113"
+            timestampString = "496441413.274363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
             <Locations>
@@ -2193,27 +2193,27 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/ChatViewController.m"
-                  timestampString = "496362208.531093"
+                  timestampString = "496444923.390486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "355"
-                  endingLineNumber = "355"
-                  offsetFromSymbolStart = "598">
+                  startingLineNumber = "357"
+                  endingLineNumber = "357"
+                  offsetFromSymbolStart = "580">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__39-[ChatViewController messageDidChange:]_block_invoke.206"
+                  symbolName = "__39-[ChatViewController messageDidChange:]_block_invoke.208"
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/ChatViewController.m"
-                  timestampString = "496362208.531192"
+                  timestampString = "496444923.390608"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "355"
-                  endingLineNumber = "355"
-                  offsetFromSymbolStart = "30">
+                  startingLineNumber = "357"
+                  endingLineNumber = "357"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2225,11 +2225,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "495663128.088113"
+            timestampString = "496441413.274363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "-messageDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2321,12 +2321,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.53547"
+                  timestampString = "496444923.394196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "397"
                   endingLineNumber = "397"
-                  offsetFromSymbolStart = "1740">
+                  offsetFromSymbolStart = "1604">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2336,12 +2336,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.535586"
+                  timestampString = "496444923.394312"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "397"
                   endingLineNumber = "397"
-                  offsetFromSymbolStart = "22">
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2465,12 +2465,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.539527"
+                  timestampString = "496444923.398158"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "803"
                   endingLineNumber = "803"
-                  offsetFromSymbolStart = "920">
+                  offsetFromSymbolStart = "1000">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2480,12 +2480,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.539657"
+                  timestampString = "496444923.398268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "803"
                   endingLineNumber = "803"
-                  offsetFromSymbolStart = "132">
+                  offsetFromSymbolStart = "204">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2495,12 +2495,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.539766"
+                  timestampString = "496444923.398358"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "803"
                   endingLineNumber = "803"
-                  offsetFromSymbolStart = "66">
+                  offsetFromSymbolStart = "104">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2512,11 +2512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialTracker/ChatViewController.m"
-            timestampString = "495663128.088113"
+            timestampString = "496441413.274363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "-didPressSendButton:withMessageText:senderId:senderDisplayName:date:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2576,12 +2576,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.542496"
+                  timestampString = "496444923.400699"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "215"
                   endingLineNumber = "215"
-                  offsetFromSymbolStart = "216">
+                  offsetFromSymbolStart = "208">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2591,12 +2591,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.542606"
+                  timestampString = "496444923.400807"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "215"
                   endingLineNumber = "215"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2656,12 +2656,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.545191"
+                  timestampString = "496444923.402505"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "435"
                   endingLineNumber = "435"
-                  offsetFromSymbolStart = "1632">
+                  offsetFromSymbolStart = "1476">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2671,12 +2671,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.545312"
+                  timestampString = "496444923.402613"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "435"
                   endingLineNumber = "435"
-                  offsetFromSymbolStart = "1724">
+                  offsetFromSymbolStart = "1708">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2864,12 +2864,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.550892"
+                  timestampString = "496444923.408103"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "242"
                   endingLineNumber = "242"
-                  offsetFromSymbolStart = "1146">
+                  offsetFromSymbolStart = "1044">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2879,12 +2879,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/AppDelegate.m"
-                  timestampString = "496362208.551026"
+                  timestampString = "496444923.408229"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "244"
                   endingLineNumber = "244"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2960,12 +2960,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.55347"
+                  timestampString = "496444923.410593"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
                   endingLineNumber = "407"
-                  offsetFromSymbolStart = "386">
+                  offsetFromSymbolStart = "316">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2975,12 +2975,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.553581"
+                  timestampString = "496444923.410714"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
                   endingLineNumber = "407"
-                  offsetFromSymbolStart = "34">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -2990,12 +2990,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/DetailTableViewController.m"
-                  timestampString = "496362208.553671"
+                  timestampString = "496444923.410817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "407"
                   endingLineNumber = "407"
-                  offsetFromSymbolStart = "18">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3055,12 +3055,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.555412"
+                  timestampString = "496444923.412856"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "179"
                   endingLineNumber = "179"
-                  offsetFromSymbolStart = "2646">
+                  offsetFromSymbolStart = "2404">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3070,12 +3070,12 @@
                   moduleName = "Path Pair"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/SocialTracker.1/SocialTracker/MatchCollectionViewController.m"
-                  timestampString = "496362208.555517"
+                  timestampString = "496444923.412986"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "179"
                   endingLineNumber = "179"
-                  offsetFromSymbolStart = "42">
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3461,6 +3461,38 @@
             startingLineNumber = "382"
             endingLineNumber = "382"
             landmarkName = "-doLike:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/AppDelegate.m"
+            timestampString = "496440936.170869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1661"
+            endingLineNumber = "1661"
+            landmarkName = "-socketDidReceiveMessage:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialTracker/ChatViewController.m"
+            timestampString = "496441401.017752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
