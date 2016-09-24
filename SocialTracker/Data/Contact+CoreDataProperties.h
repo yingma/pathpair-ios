@@ -2,8 +2,8 @@
 //  Contact+CoreDataProperties.h
 //  SocialTracker
 //
-//  Created by Admin on 7/20/16.
-//  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
+//  Created by Admin on 9/17/16.
+//  Copyright © 2016 Path Pair. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *city;
 @property (nullable, nonatomic, retain) NSString *company;
 @property (nullable, nonatomic, retain) NSString *firstname;
+@property (nullable, nonatomic, retain) NSNumber *flag;
 @property (nullable, nonatomic, retain) NSString *gender;
 @property (nullable, nonatomic, retain) NSString *lastname;
 @property (nullable, nonatomic, retain) NSNumber *like;
-@property (nullable, nonatomic, retain) NSNumber *flag;
 @property (nullable, nonatomic, retain) NSString *phone;
 @property (nullable, nonatomic, retain) NSString *photourl;
 @property (nullable, nonatomic, retain) NSDate *time;
@@ -32,8 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *username;
 @property (nullable, nonatomic, retain) NSString *uuid;
 @property (nullable, nonatomic, retain) NSOrderedSet<Meeting *> *meetings;
+@property (nullable, nonatomic, retain) NSSet<Room *> *rooms;
 @property (nullable, nonatomic, retain) NSSet<Tag *> *tags;
-@property (nullable, nonatomic, retain) Room *room;
 
 @end
 
@@ -49,6 +49,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeMeetingsObject:(Meeting *)value;
 - (void)addMeetings:(NSOrderedSet<Meeting *> *)values;
 - (void)removeMeetings:(NSOrderedSet<Meeting *> *)values;
+
+- (void)addRoomsObject:(Room *)value;
+- (void)removeRoomsObject:(Room *)value;
+- (void)addRooms:(NSSet<Room *> *)values;
+- (void)removeRooms:(NSSet<Room *> *)values;
 
 - (void)addTagsObject:(Tag *)value;
 - (void)removeTagsObject:(Tag *)value;

@@ -2,8 +2,8 @@
 //  Room+CoreDataProperties.h
 //  SocialTracker
 //
-//  Created by Admin on 7/19/16.
-//  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
+//  Created by Admin on 9/17/16.
+//  Copyright © 2016 Path Pair. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Room (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *name;
-@property (nullable, nonatomic, retain) NSNumber *pending; // 1 for request 2 for aprove
 @property (nullable, nonatomic, retain) NSNumber *badge;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSNumber *pending;
 @property (nullable, nonatomic, retain) NSString *rid;
 @property (nullable, nonatomic, retain) NSDate *time;
 @property (nullable, nonatomic, retain) NSSet<Contact *> *contacts;

@@ -11,6 +11,8 @@
 
 @interface SignupGeoViewController : UIViewController
 
+- (IBAction)termButtonPressed:(id)sender;
+- (IBAction)privacyButtonPressed:(id)sender;
 - (IBAction)signup:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *zipText;

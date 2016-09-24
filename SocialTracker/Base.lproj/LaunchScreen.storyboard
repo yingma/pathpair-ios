@@ -17,19 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Path Pair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-3d-zU3">
-                                <rect key="frame" x="112" y="65" width="96" height="39"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-uH-tLH">
-                                <rect key="frame" x="150" y="261" width="20" height="20"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutorial.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-o7-Msm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-uH-tLH">
+                                <rect key="frame" x="142" y="244" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdI-Xe-BwI">
-                                <rect key="frame" x="208" y="97" width="35" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Path Pair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-3d-zU3">
+                                <rect key="frame" x="92" y="65" width="136" height="55"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -37,8 +35,6 @@
                         <constraints>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="centerX" secondItem="d1Y-uH-tLH" secondAttribute="centerX" id="6Ts-27-KSN"/>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="top" secondItem="tZw-9U-t3z" secondAttribute="bottom" constant="45" id="EHp-eT-UhH"/>
-                            <constraint firstItem="cdI-Xe-BwI" firstAttribute="top" secondItem="tZw-9U-t3z" secondAttribute="bottom" constant="77" id="dw0-Tw-BHf"/>
-                            <constraint firstItem="cdI-Xe-BwI" firstAttribute="leading" secondItem="xQE-3d-zU3" secondAttribute="trailing" id="fQ1-ti-zKe"/>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lOY-Xg-Pc3"/>
                             <constraint firstItem="MYA-sW-Ew7" firstAttribute="top" secondItem="d1Y-uH-tLH" secondAttribute="bottom" constant="287" id="zqS-rL-bGF"/>
                         </constraints>
@@ -46,7 +42,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.266666666666666" y="355"/>
+            <point key="canvasLocation" x="28" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tutorial.jpg" width="640" height="1136"/>
+    </resources>
 </document>

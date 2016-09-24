@@ -110,15 +110,21 @@
         [self loadScrollViewWithPage:0];
         [self loadScrollViewWithPage:1];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(messageDidChange:)
-                                                     name:kMessageChangeNotification
-                                                   object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(messageDidChange:)
+//                                                     name:kMessageChangeNotification
+//                                                   object:nil];
         
-        if (self.contact.room!= nil && [self.contact.room.pending integerValue] != 2) {
-            [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+        if (self.contact.rooms.count > 0) {
             
-            if (self.contact.room.contacts.count > 1)
+            Room *room = [self.contact.rooms allObjects][0];
+            
+            if ([room.pending integerValue] == 2)
+                [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
+            else
+                [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+            
+            if (room.contacts.count > 1)
                 self.buttonChat.hidden = NO;
             else
                 self.buttonChat.hidden = YES;
@@ -128,10 +134,7 @@
             [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
             self.buttonChat.hidden = YES;
         }
-
-            
-    
-        
+                
         // adjust the contentSize (larger or smaller) depending on the orientation
         self.scrollView.contentSize =
         CGSizeMake(CGRectGetWidth(self.scrollView.frame) * self.contact.meetings.count, CGRectGetHeight(self.scrollView.frame));
@@ -257,7 +260,7 @@
     
     self.buttonLike.enabled = NO;
     
-    if (self.contact.room == nil) {
+    if (self.contact.rooms.count == 0) {
         
             [[ServiceEngine sharedEngine] createRoomWithDoneBlock:^(NSString * _Nonnull roomid) {
                 
@@ -266,13 +269,19 @@
                                                         toRoom:roomid
                                                  WithDoneBlock:^(NSError * _Nullable error) {
                                                      
-                                                     self.buttonLike.enabled = YES;
-                                                     
-                                                     if (error != nil)
+                                                     if (error) {
+                                                         
+                                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                                         
+                                                             self.buttonLike.enabled = YES;
+                                                         });
+                                                         
                                                          return;
-                                                     
+                                                     }                                                     
 
-                                                     [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                         [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+                                                     });
                                                      
                                                      // add room and contact to the room
                                                      Room *r = [_theApp newRoom];
@@ -287,7 +296,7 @@
                                                                  andUser:self.contact];
                                                      
                                                      // enter the room
-                                                     NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
+                                                     NSDictionary *parameters = @{@"roomId" : roomid};
                                                      NSArray *array = [NSArray arrayWithObject:parameters];
                                                      [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                                      
@@ -310,80 +319,80 @@
                                                  }];
             }];
             
-    } else if ([self.contact.room.pending integerValue] == 2){
-            
-
-//        
-//            NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
-//            NSArray *array = [NSArray arrayWithObject:parameters];
-//            [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
+    } else {
         
+        Room *room = [self.contact.rooms allObjects][0];
+        
+        if ([room.pending integerValue] == 2){
+            
             //enter chat room
-            [[ServiceEngine sharedEngine] enterRoom:self.contact.room.rid
+            [[ServiceEngine sharedEngine] enterRoom:room.rid
                                             andUser:self.contact.uid
                                       withDoneBlock:^(NSError * _Nullable error) {
                                       
-                                      if (error) {
+                                    if (error) {
                                           
-                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                              self.buttonLike.enabled = YES;
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                            
+                                            self.buttonLike.enabled = YES;
                                               
-                                                    UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Error"
-                                                                                                               message:[[@"Cannot like " stringByAppendingString:self.contact.firstname ?: @""] stringByAppendingString:@" because she/he unliked you"]
-                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                                              
-                                                    UIAlertAction *okAction = [UIAlertAction
-                                                                         actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                                                                         style:UIAlertActionStyleCancel
-                                                                         handler:^(UIAlertAction *action)
-                                                                         {
-                                                                             //NSLog(@"ok action");
-                                                                         }];
-                                              
-                                                    [alert addAction:okAction];
-                                              
-                                              [self presentViewController:alert animated:YES
+                                            UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Error"
+                                                                                                       message:[[@"Cannot like " stringByAppendingString:self.contact.firstname ?: @""] stringByAppendingString:@" because she/he unliked you"]
+                                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                                      
+                                            UIAlertAction *okAction = [UIAlertAction
+                                                                 actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                                                 style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction *action)
+                                                                 {
+                                                                     //NSLog(@"ok action");
+                                                                 }];
+                                      
+                                            [alert addAction:okAction];
+                                      
+                                            [self presentViewController:alert animated:YES
                                                                completion:^ {
                                                                    
-                                                                   [_theApp setBadgeChat:-[self.contact.room.badge integerValue]];
-                                                                   [_theApp deleteRoom:self.contact.room];
-                                                                   self.contact.room = nil;
+                                                                   [_theApp setBadgeChat:-[room.badge integerValue]];
+                                                                   [_theApp deleteRoom:room];
+                                                                   [self.contact removeRoomsObject:room];
+                                                                   //self.contact.room = nil;
                                                                    [_theApp saveContext];
                                                                }];
 
-                                                });
+                                        });
                                           
-                                                return;
-                                          }
+                                        return;
+                                    }
                                       
-                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                    dispatch_async(dispatch_get_main_queue(), ^{
                                           
                                                 self.buttonLike.enabled = YES;
                                           
                                                 [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
                                                 self.buttonChat.hidden = NO;
-                                          });
+                                    });
                                           
-                                          Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
-                                          //[contact.room addContactsObject:c];
-                                          self.contact.room.pending = [NSNumber numberWithInteger:0];
-                                          [_theApp enterRoom1:self.contact.room andUser:c];
-                                          
-                                          // enter the chat room
-                                          NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
-                                          NSArray *array = [NSArray arrayWithObject:parameters];
-                                          [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
-                                      
-                                  }];
+                                    Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
+                                    //[contact.room addContactsObject:c];
+                                    room.pending = [NSNumber numberWithInteger:0];
+                                    [_theApp enterRoom1:room andUser:c];
+                                  
+                                    // enter the chat room
+                                    NSDictionary *parameters = @{@"roomId" : room.rid};
+                                    NSArray *array = [NSArray arrayWithObject:parameters];
+                                    [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
+                              
+                            }];
 
-    } else {
+        } else {
         
-        NSString *const kMessageSequence       = @"MessageSequence";
+            NSString *const kMessageSequence       = @"MessageSequence";
         
-        NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
-        NSDictionary *parameters = @{kAppSocketRoomId: self.contact.room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
-        NSArray *array = [NSArray arrayWithObject:parameters];
-        [[WebSocketEngine sharedEngine] emitWithAck:@"send"
+            NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
+            NSDictionary *parameters = @{kAppSocketRoomId: room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
+            NSArray *array = [NSArray arrayWithObject:parameters];
+            [[WebSocketEngine sharedEngine] emitWithAck:@"send"
                                                args:array
                               withCompletionHandler:^() {
                                   
@@ -392,41 +401,29 @@
                                   
                                       [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
                                       self.buttonChat.hidden = YES;
+                                      
+                                      [self performSegueWithIdentifier:@"unlike" sender:self];
+
                                   });
                                   
-                                  NSDictionary *parameters = @{@"roomId" : self.contact.room.rid};
+                                  NSDictionary *parameters = @{@"roomId" : room.rid};
                                   NSArray *array = [NSArray arrayWithObject:parameters];
                                   [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
                                   
-                                  [_theApp deleteRoom:self.contact.room];
-                                  self.contact.room = nil;
+                                  [_theApp deleteRoom:room];
+                                  //self.contact.room = nil;
                                   [_theApp saveContext];
                                   
                               }];
         
-        [_theApp setBadgeChat:-[self.contact.room.badge integerValue]];
-        self.contact.room.badge = [NSNumber numberWithInteger:0];
+            [_theApp setBadgeChat:-[room.badge integerValue]];
+            room.badge = [NSNumber numberWithInteger:0];
 
-        
-//        [[ServiceEngine sharedEngine] leaveRoom:self.contact.room.rid
-//                                        //andUser:self.contact.uid
-//                                  withDoneBlock:^(NSError * _Nullable error) {
-//                                      
-//                                      self.buttonLike.enabled = YES;
-//                                      
-//                                      if (error)
-//                                          return;
-//                                      
-//
-//                                      [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
-//                                      self.buttonChat.hidden = YES;
-//                                      
-//                                      [_theApp deleteRoom:self.contact.room];
-//                                      
-//                                  }];
 
+        }
     }
 }
+
 
 - (IBAction)doDelete:(id)sender {
     
@@ -440,38 +437,38 @@
 
 #pragma mark - message received method overrides
 
--(void) messageDidChange: (NSNotification*) aNotification {
-    
-    NSDictionary* info = [aNotification userInfo];
-    ServiceMessage *m = [info objectForKey:@"message"];
-    
-    if (self.contact.room == nil || ![m.room isEqualToString:self.contact.room.rid])
-        return;
-    
-    
-    
-//    if (m.type == MessageTypeSubscribe) {
-        
-//        [_theApp deleteRoom:self.contact.room];
+//-(void) messageDidChange: (NSNotification*) aNotification {
+//    
+//    NSDictionary* info = [aNotification userInfo];
+//    ServiceMessage *m = [info objectForKey:@"message"];
+//    
+//    if (self.contact.rooms.count == 0 || ![m.room isEqualToString:self.contact.room.rid])
+//        return;
+//    
+//    
+//    
+////    if (m.type == MessageTypeSubscribe) {
 //        
-//        [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
-//        self.buttonLike.enabled = YES;
-        
-//    } else if (m.type == MessageTypeSubscribe) {
-        
-//        Room *r = [_theApp newRoom];
-//        r.rid = m.room;
-//        self.contact.room = r;
-//        [r addContactsObject:self.contact];
+////        [_theApp deleteRoom:self.contact.room];
+////        
+////        [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
+////        self.buttonLike.enabled = YES;
 //        
-//        [_theApp saveContext];
+////    } else if (m.type == MessageTypeSubscribe) {
 //        
-//        [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
-//        self.buttonLike.enabled = YES;
-        
-//    }
-    
-}
+////        Room *r = [_theApp newRoom];
+////        r.rid = m.room;
+////        self.contact.room = r;
+////        [r addContactsObject:self.contact];
+////        
+////        [_theApp saveContext];
+////        
+////        [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+////        self.buttonLike.enabled = YES;
+//        
+////    }
+//    
+//}
 
 
 /*
@@ -518,10 +515,10 @@
     if ([[segue identifier] isEqualToString:@"chat"]) {
         
         ChatViewController *chat = (ChatViewController*)segue.destinationViewController;
-        chat.room = self.contact.room;
+        chat.room = [self.contact.rooms allObjects][0];
         chat.title = [NSString stringWithFormat:@"%@ %@", self.contact.firstname, self.contact.lastname];
         
-        self.contact.room.badge = [NSNumber numberWithInteger:0];
+        chat.room.badge = [NSNumber numberWithInteger:0];
         
         [_theApp saveContext];
         

@@ -76,6 +76,9 @@ extern NSString* const kShowDemo;
 - (void)didBluetooth:(NSNotification*)notification;
 - (void)locationDidChange:(NSNotification*)notification;
 
+
+- (Room *) prepareChatRoom:(NSString *)rid andInviter:(NSString *)uid;
+
 - (void) showDetailView:(NSString*) uid
                 andRoom:(NSString*) rid;
 - (void) showChatView:(NSString *)rid andContact:(Contact *)c;

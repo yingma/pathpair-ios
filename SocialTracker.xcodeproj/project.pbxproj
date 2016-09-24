@@ -25,10 +25,12 @@
 		841BA7F01D11FFEC002C0006 /* RoundedCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841BA7EF1D11FFEC002C0006 /* RoundedCornersView.m */; };
 		841BA80B1D13302C002C0006 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 841BA80A1D13302C002C0006 /* star.png */; };
 		841BA8111D134A64002C0006 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841BA8101D134A63002C0006 /* SettingTableViewController.m */; };
+		841F35ED1D90CCEC007F79C3 /* ServiceInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F35EC1D90CCEC007F79C3 /* ServiceInvite.m */; };
 		84224D171D2D9EF000E77DD8 /* WebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D161D2D9EF000E77DD8 /* WebSocketEngine.m */; };
 		84224D231D2D9FA300E77DD8 /* ServiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D221D2D9FA300E77DD8 /* ServiceMessage.m */; };
 		84396DFC1D3F1C2000DB5830 /* Contact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */; };
 		8458AE931CDADE0E004FF4A9 /* ServiceContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458AE921CDADE0E004FF4A9 /* ServiceContact.m */; };
+		8476CBD51D8CAC8500657556 /* tutorial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8476CBD41D8CAC8500657556 /* tutorial.jpg */; };
 		84889B181D58AC2200A2AF13 /* ServiceCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = 84889B171D58AC2200A2AF13 /* ServiceCriteria.m */; };
 		848D44CF1D08BB8D00E38395 /* SignupGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D44CE1D08BB8D00E38395 /* SignupGeoViewController.m */; };
 		848D44DB1D0A88DC00E38395 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D44DA1D0A88DC00E38395 /* TagViewController.m */; };
@@ -171,6 +173,8 @@
 		841BA80A1D13302C002C0006 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		841BA80F1D134A63002C0006 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		841BA8101D134A63002C0006 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
+		841F35EC1D90CCEC007F79C3 /* ServiceInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceInvite.m; path = Data/ServiceInvite.m; sourceTree = "<group>"; };
+		841F35EE1D90CD1D007F79C3 /* ServiceInvite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ServiceInvite.h; path = Data/ServiceInvite.h; sourceTree = "<group>"; };
 		84224D151D2D9EF000E77DD8 /* WebSocketEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocketEngine.h; path = Http/WebSocketEngine.h; sourceTree = "<group>"; };
 		84224D161D2D9EF000E77DD8 /* WebSocketEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebSocketEngine.m; path = Http/WebSocketEngine.m; sourceTree = "<group>"; };
 		84224D211D2D9FA300E77DD8 /* ServiceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceMessage.h; path = Http/ServiceMessage.h; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+CoreDataProperties.m"; path = "Data/Contact+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8458AE911CDADE0E004FF4A9 /* ServiceContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceContact.h; path = Http/ServiceContact.h; sourceTree = "<group>"; };
 		8458AE921CDADE0E004FF4A9 /* ServiceContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceContact.m; path = Http/ServiceContact.m; sourceTree = "<group>"; };
+		8476CBD41D8CAC8500657556 /* tutorial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tutorial.jpg; sourceTree = "<group>"; };
 		84889B161D58AC2200A2AF13 /* ServiceCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceCriteria.h; path = Http/ServiceCriteria.h; sourceTree = "<group>"; };
 		84889B171D58AC2200A2AF13 /* ServiceCriteria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceCriteria.m; path = Http/ServiceCriteria.m; sourceTree = "<group>"; };
 		848D44CD1D08BB8D00E38395 /* SignupGeoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupGeoViewController.h; sourceTree = "<group>"; };
@@ -466,6 +471,8 @@
 				84224D221D2D9FA300E77DD8 /* ServiceMessage.m */,
 				84889B161D58AC2200A2AF13 /* ServiceCriteria.h */,
 				84889B171D58AC2200A2AF13 /* ServiceCriteria.m */,
+				841F35EE1D90CD1D007F79C3 /* ServiceInvite.h */,
+				841F35EC1D90CCEC007F79C3 /* ServiceInvite.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -487,6 +494,7 @@
 		84AADF3B1CBF612500231E89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8476CBD41D8CAC8500657556 /* tutorial.jpg */,
 				84F11DCA1D3C86B1001052A5 /* email.png */,
 				84125A6D1D31F4E500455C83 /* chat.png */,
 				84125A6E1D31F4E500455C83 /* match.png */,
@@ -845,6 +853,7 @@
 				84CBFBCD1CF1551A00C28CCA /* slider-default-trackBackground.png in Resources */,
 				84CBFBC81CF1551A00C28CCA /* slider-default-handle-highlighted@2x.png in Resources */,
 				84CBFBD81CF1551A00C28CCA /* slider-default7-trackCrossedOver@2x.png in Resources */,
+				8476CBD51D8CAC8500657556 /* tutorial.jpg in Resources */,
 				84CBFBD31CF1551A00C28CCA /* slider-default7-track.png in Resources */,
 				841BA80B1D13302C002C0006 /* star.png in Resources */,
 				84CBFBD21CF1551A00C28CCA /* slider-default7-handle@2x.png in Resources */,
@@ -981,6 +990,7 @@
 				84BF59971CD651860086CC5F /* Search.m in Sources */,
 				84CBFB951CF0DB3300C28CCA /* TagSearchSource.m in Sources */,
 				84CBFB861CED07AF00C28CCA /* SignupDetailViewController.m in Sources */,
+				841F35ED1D90CCEC007F79C3 /* ServiceInvite.m in Sources */,
 				84B8FF931D32B6D800899093 /* Message.m in Sources */,
 				84BF59931CD651860086CC5F /* Meeting.m in Sources */,
 				84E779891CE9473B00A20EDE /* XWPhotoEditorViewController.m in Sources */,

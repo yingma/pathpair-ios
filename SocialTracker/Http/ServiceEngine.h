@@ -2,7 +2,7 @@
 //  ServiceEngine.h
 //  SeeAndRate
 //
-//  Created by Admin on 2/21/16.
+//  Created by Ying Ma on 2/21/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 #import "ServiceMeeting.h"
 #import "ServiceMessage.h"
 #import "ServiceCriteria.h"
+#import "ServiceInvite.h"
 
 
 extern NSString *__nonnull const kServiceUUIDKey;
@@ -45,6 +46,7 @@ typedef void (^WebContactSearchBlock)(NSArray<ServiceContact *>* __nullable cont
 typedef void (^WebTagSearchBlock)(NSArray<NSString *>* __nullable tags);
 typedef void (^WebMeetingSearchBlock)(NSArray<ServiceMeeting *>* __nullable meetings);
 typedef void (^WebMessageSearchBlock)(NSArray<ServiceMessage *>* __nullable messages);
+typedef void (^WebInviteSearchBlock)(NSArray<ServiceInvite *>* __nullable invites);
 typedef void (^WebRoomBlock)(NSString* __nullable roomid);
 
 @interface ServiceEngine : NSObject
@@ -363,5 +365,9 @@ typedef void (^WebRoomBlock)(NSString* __nullable roomid);
 - (void)findUsersInRoom:(nonnull NSString *) roomId
             withSuccess:(nonnull WebTagSearchBlock) success
                 failure:(nullable WebFailureBlock)failure;
+
+
+- (void)searchInvitesWithSuccess:(nonnull WebInviteSearchBlock) success
+                         failure:(nullable WebFailureBlock)failure;
 
 @end

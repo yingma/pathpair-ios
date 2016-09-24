@@ -49,6 +49,18 @@
     self.buttonSignup.alpha = 0.5;
 }
 
+- (IBAction)termButtonPressed:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.pathpair.com/term.html"]];
+}
+
+- (IBAction)privacyButtonPressed:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.pathpair.com/privacy.html"]];
+}
+
+
+
 - (IBAction)signup:(id)sender {
     
     _contact.city = self.zipText.text;

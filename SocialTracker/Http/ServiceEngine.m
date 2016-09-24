@@ -1264,6 +1264,45 @@ NSString *const kTokenExpiryKey = @"Expiry";
      ];
 }
 
+
+- (void)searchInvitesWithSuccess:(WebInviteSearchBlock) success
+                         failure:(WebFailureBlock)failure {
+    
+    if (![self validateToken])
+        return;
+    
+    [self.httpManager GET:[@"/v1/room/invites?access_token=" stringByAppendingString:self.accessToken]
+               parameters:nil
+                 progress:nil
+                  success:^(NSURLSessionDataTask *task, id responseObject) {
+                      
+                      NSArray *responseArray = (NSArray *)responseObject;
+                      NSMutableArray *invites = [NSMutableArray<ServiceInvite*> array];
+                      
+                      [responseArray enumerateObjectsUsingBlock:^(id obj,NSUInteger idx, BOOL *stop){
+                          
+                          ServiceInvite *invite = [[ServiceInvite alloc] init];
+                          invite.rid = [obj objectForKey:kAppSocketRoomId];
+                          invite.uid = [obj objectForKey:kAppSocketUserId];
+                          [invites addObject:invite];
+                      }];
+                      
+                      if (success) {
+                          success(invites);
+                      }
+                      
+                  }
+                  failure:^(NSURLSessionDataTask *task, NSError *error) {
+                      if (failure) {
+                          failure(error);
+                      }
+                  }
+     
+     ];
+    
+}
+
+
 - (void)enterRoom:(NSString *)room
           andUser:(NSString *)user
     withDoneBlock:(WebDoneBlock)done {

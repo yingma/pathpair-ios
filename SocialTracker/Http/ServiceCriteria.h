@@ -2,7 +2,7 @@
 //  ServiceCriteria.h
 //  SocialTracker
 //
-//  Created by Admin on 8/8/16.
+//  Created by Ying Ma on 8/8/16.
 //  Copyright © 2016 Path Pair. All rights reserved.
 //
 

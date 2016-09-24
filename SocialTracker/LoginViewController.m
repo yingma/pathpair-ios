@@ -75,9 +75,9 @@
     
     [self.bgCaptureSession startRunning];
     
-    /*
+    /***************************
         setup text field/button
-     */
+     ***************************/
     
     //To make the border look very close to a UITextField
     [self.textEmail.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
@@ -152,7 +152,7 @@
     
 }
 
-
+// general login
 - (IBAction)login:(id)sender {
     
     [ServiceEngine sharedEngine].email = self.textEmail.text;
@@ -321,6 +321,7 @@
     
 }
 
+// login from facebook page
 - (IBAction)loginFacebook:(id)sender {
     
     
@@ -387,41 +388,6 @@
                                   [_theApp initRooms];
                                   
                                   [[WebSocketEngine sharedEngine] registerWithChatSocketDelegate:_theApp];
-                                  
-//                                  [[ServiceEngine sharedEngine] getProfile:contacts[0].uuid type:@"self" withSuccess:^(NSArray<NSString *> * _Nullable tags) {
-//                                      
-//                                      for (NSString *t in tags) {
-//                                          
-//                                          Tag * tag = [_theApp newTag:t];
-//                                          [contact addTagsObject:tag];
-//                                      }
-//                                      
-//                                      [[ServiceEngine sharedEngine] getCriteriaWithSuccess:^(ServiceCriteria * _Nullable criteria) {
-//                                          
-//                                          Search * search = [_theApp getCriteria];
-//                                          search.ageFrom = [NSNumber numberWithFloat:criteria.from];
-//                                          search.ageTo = [NSNumber numberWithFloat:criteria.to];
-//                                          search.male = [NSNumber numberWithBool:criteria.male];
-//                                          search.female = [NSNumber numberWithBool:criteria.female];
-//                                          
-//                                          [[ServiceEngine sharedEngine] getCriteriaTagWithSuccess:^(NSArray<NSString *> * _Nullable tags) {
-//                                              
-//                                              for (NSString * tag in tags) {
-//                                                  [search addTagsObject:[_theApp newTag:tag]];
-//                                              }
-//                                              
-//                                          } failure:^(NSError * _Nullable error) {
-//                                              
-//                                          }];
-//                                          
-//                                      } failure:^(NSError * _Nullable error) {
-//                                          
-//                                      }];
-//
-//                                      
-//                                  } failure:^(NSError * _Nullable error) {
-//                                      
-//                                  }];
                                   
                                   
                                   [_theApp saveContext];

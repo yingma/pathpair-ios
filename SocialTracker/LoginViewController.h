@@ -1,8 +1,11 @@
 //
 //  LoginViewController.h
-//  SeeAndRate
+//  Log In view controller
+//  facebook login and general login
+
+
 //
-//  Created by Admin on 1/12/16.
+//  Created by Ying Ma on 1/12/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 

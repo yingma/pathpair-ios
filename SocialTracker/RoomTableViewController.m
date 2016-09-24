@@ -245,6 +245,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [self performSegueWithIdentifier:@"chat" sender:self];
 }
 
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -255,11 +259,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         ChatViewController *chat = (ChatViewController*)segue.destinationViewController;
         chat.room = _room;
         
+        
         NSArray<Contact*> *contacts = [[_room.contacts allObjects] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"uid != %@", [[ServiceEngine sharedEngine] uid]]];
         
         assert (contacts.count > 0);
         
         chat.title = [NSString stringWithFormat:@"%@ %@", contacts[0].firstname, contacts[0].lastname];
+        chat.contact = contacts[0];
 
         
     } else if ([segue.identifier isEqualToString:@"detail"]) {

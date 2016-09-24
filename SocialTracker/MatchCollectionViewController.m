@@ -56,7 +56,10 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
     
     [super viewDidLoad];
     
+
+    
     _theApp = (AppDelegate *) [UIApplication sharedApplication].delegate;
+    ((CHTCollectionViewWaterfallLayout *)self.collectionViewLayout).minimumColumnSpacing = 0;
     
     // location event
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -103,8 +106,6 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
-    [_theApp setBadgeMatch:0];
 }
 
 - (void)refresh:(id)sender{
@@ -142,6 +143,8 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                             contact = [_theApp newContact];
                                                             contact.uid = uid;
                                                             contact.flag = [NSNumber numberWithInteger:1]; // new
+                                                            
+                                                            
                                                         } else if (m == nil)
                                                             contact.flag = [NSNumber numberWithInteger:2];
                                                         
@@ -163,12 +166,21 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                             m.latitude = [NSNumber numberWithDouble:meeting.latitude];
                                                             m.contact = contact;
                                                             [contact addMeetingsObject:m];
+                                                            
                                                         }
                                                         
                                                         if ([meeting.uid isEqualToString:[[ServiceEngine sharedEngine] uid]])
                                                             m.matches = meeting.matches;
                                                         else
                                                             m.matches = meeting.matches1;
+                                                        
+                                                        if ([contact.flag integerValue] == 1 && m.matches != nil) {
+                                                            
+                                                            dispatch_async(dispatch_get_main_queue(), ^ {
+                                                                [_theApp setBadgeMatch:1];
+                                                            });
+                                                        }
+                                                        
                                                         
                                                         if (meeting.lengthInMinutes >= 1) // less 1 minutes
                                                             m.length = [NSNumber numberWithFloat:meeting.lengthInMinutes];
@@ -379,23 +391,30 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                      }];
     }
     
-    NSLog(@"%d", [contact.room.pending integerValue]);
+    //NSLog(@"%d", [contact.room.pending integerValue]);
     
-    if (contact.room != nil && [contact.room.pending integerValue] != 2) { // pending not for approve
+    if (contact.rooms.count > 0) {
         
-        [cell.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+        Room *room = [contact.rooms allObjects][0];
+        
+        if ([room.pending integerValue] == 2)
+            [cell.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
+        else
+            [cell.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
 
-        NSLog(@"%d", contact.room.contacts.count);
-        if (contact.room.contacts.count > 1)
+
+        NSLog(@"%d", room.contacts.count);
+        if (room.contacts.count > 1)
             cell.buttonChat.hidden = NO;
         else
             cell.buttonChat.hidden = YES;
         
     } else {
-        
+    
         [cell.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
         cell.buttonChat.hidden = YES;
     }
+        
 
 }
 
@@ -442,6 +461,12 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
             [_theApp saveContext];
         }
         
+        Meeting *meeting = [contact.meetings lastObject];
+        
+        if (meeting.matches != nil) {
+            [_theApp setBadgeMatch:-1];
+        }
+        
         controller.contact = contact;
         
     } else if ([[segue identifier] isEqualToString:@"chat"]) {
@@ -452,14 +477,18 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
         ChatViewController *chat = (ChatViewController*)segue.destinationViewController;
         chat.title = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
         
-        assert(contact.room != nil);
+        if (contact.rooms.count > 0) {
+            
+            Room * room = [contact.rooms allObjects][0];
         
-        chat.room = contact.room;
+            chat.room = room;
         
-        [_theApp setBadgeChat:-[contact.room.badge integerValue]];
-        contact.room.badge = [NSNumber numberWithInteger:0];
+            [_theApp setBadgeChat:-[room.badge integerValue]];
+            room.badge = [NSNumber numberWithInteger:0];
         
-        [_theApp saveContext];
+            [_theApp saveContext];
+            
+        }
 
     }
 }
@@ -542,7 +571,8 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
 }
 
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
     
@@ -611,11 +641,15 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(150, 213);
+    return CGSizeMake(153, 209);
 }
 
 
 #pragma mark - event
+
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+    
+}
 
 - (IBAction)deleteButtonPressed:(UIButton *)button{
     
@@ -650,7 +684,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
     
     Contact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if (contact.room == nil) { // need to send invite to other side
+    if (contact.rooms.count == 0) { // need to send invite to other side
         
         [[ServiceEngine sharedEngine] createRoomWithDoneBlock:^(NSString * _Nonnull roomid) {
             
@@ -661,20 +695,21 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                   toRoom:roomid
                                            WithDoneBlock:^(NSError * _Nullable error) {
                                                
-                                               button.enabled = YES;
-                                               
-                                               if (error != nil)
+                                               if (error) {
+                                                   
+                                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                                       button.enabled = YES;
+                                                   });
+                                                   
                                                    return;
+                                               }
                                                
-
-                                               [button setTitle: @"Unlike" forState: UIControlStateNormal];
-
                                                // add room and contact to the room
                                                Room *r = [_theApp newRoom];
                                                r.rid = roomid;
                                                r.pending = [NSNumber numberWithInteger:1]; // pending on request
                                                
-                                               NSLog(@"%d", contact.room.contacts.count);
+                                               //NSLog(@"%d", contact.room.contacts.count);
                                                
                                                // add other to the room
                                                [_theApp enterRoom1:r
@@ -685,33 +720,39 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                NSArray *array = [NSArray arrayWithObject:parameters];
                                                [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                                
-                                               UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Invite sent"
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   
+                                                   button.enabled = YES;
+                                                   
+                                                   UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Invite sent"
                                                                                                                 message:[[@"Like " stringByAppendingString:contact.firstname ?: @"Anonymous"] stringByAppendingString:@" once he/she likes back so you can chat"]
                                                                                                          preferredStyle:UIAlertControllerStyleAlert];
                                                
-                                               UIAlertAction *okAction = [UIAlertAction
+                                                   UIAlertAction *okAction = [UIAlertAction
                                                                           actionWithTitle:NSLocalizedString(@"OK", @"OK action")
                                                                           style:UIAlertActionStyleCancel
                                                                           handler:^(UIAlertAction *action) {
                                                                               [alert dismissViewControllerAnimated:YES completion:nil];
                                                                           }];
                                                
-                                               [alert addAction:okAction];
+                                                   [alert addAction:okAction];
                                                
-                                               [self presentViewController:alert animated:YES completion:nil];
-                                               
-                                           }];
+                                                   [self presentViewController:alert animated:YES completion:nil];
+                                               });
+                                        }];
             }
         }];
         
-    } else if ([contact.room.pending integerValue] == 2) { //like
+    } else if (contact.rooms.count > 0) {
         
-
+        Room *room = [contact.rooms allObjects][0];
+        
+        if ([room.pending integerValue] == 2) { //like
         
 //enter chat room
-        [[ServiceEngine sharedEngine] enterRoom:contact.room.rid
-                                        andUser:contact.uid
-                                  withDoneBlock:^(NSError * _Nullable error) {
+            [[ServiceEngine sharedEngine] enterRoom:room.rid
+                                            andUser:contact.uid
+                                      withDoneBlock:^(NSError * _Nullable error) {
                                       
                                         if (error) {
                                           
@@ -734,9 +775,11 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                               
                                                 [self presentViewController:alert animated:YES completion:^{
                                                             
-                                                        [_theApp setBadgeChat:-[contact.room.badge integerValue]];
-                                                        [_theApp deleteRoom:contact.room];
-                                                        contact.room = nil;
+                                                        [_theApp setBadgeChat:-[room.badge integerValue]];
+                                                        [_theApp deleteRoom:room];
+                                                    
+                                                        [contact removeRoomsObject:room];
+                                                        //contact.room = nil;
                                                         [_theApp saveContext];
                                         
                                                  }];
@@ -745,80 +788,51 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                             return;
                                         }
                                       
-                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                          
-                                            button.enabled = YES;
-                                      
-                                            [button setTitle: @"Unlike" forState: UIControlStateNormal];
-                                            cell.buttonChat.hidden = NO;
-                                        });
                                       
                                         Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
                                         //[contact.room addContactsObject:c];
-                                        contact.room.pending = [NSNumber numberWithInteger:0];
-                                        [_theApp enterRoom1:contact.room andUser:c];
+                                        room.pending = [NSNumber numberWithInteger:0];
+                                        [_theApp enterRoom1:room andUser:c];
                                       
                                       
                                         // enter the room
-                                        NSDictionary *parameters = @{@"roomId" : contact.room.rid};
+                                        NSDictionary *parameters = @{@"roomId" : room.rid};
                                         NSArray *array = [NSArray arrayWithObject:parameters];
                                         [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                       
                                   }];
 
         
-    } else {
+        } else {
         
         // indicate to leave the room
         
-        NSString *const kMessageSequence = @"MessageSequence";
+            NSString *const kMessageSequence = @"MessageSequence";
 
-        NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
-        NSDictionary *parameters = @{kAppSocketRoomId: contact.room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
-        NSArray *array = [NSArray arrayWithObject:parameters];
-        [[WebSocketEngine sharedEngine] emitWithAck:@"send"
-                                               args:array
-                              withCompletionHandler:^() {
+            NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
+            NSDictionary *parameters = @{kAppSocketRoomId: room.rid, kAppSocketMessage : @"Unlike you and left room", kAppSocketSequence : [NSString stringWithFormat: @"%ld", (long)++seq]};
+            NSArray *array = [NSArray arrayWithObject:parameters];
+            [[WebSocketEngine sharedEngine] emitWithAck:@"send"
+                                                   args:array
+                                  withCompletionHandler:^() {
                                   
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                      button.enabled = YES;
+                                      NSDictionary *parameters = @{@"roomId" : room.rid};
+                                      NSArray *array = [NSArray arrayWithObject:parameters];
+                                      [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
                                   
-                                      [button setTitle: @"Like" forState: UIControlStateNormal];
-                                      cell.buttonChat.hidden = YES;
-                                  });
+                                      [_theApp setBadgeChat:-[room.badge integerValue]];
+                                      room.badge = [NSNumber numberWithInteger:0];
                                   
-                                  NSDictionary *parameters = @{@"roomId" : contact.room.rid};
-                                  NSArray *array = [NSArray arrayWithObject:parameters];
-                                  [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
-                                  
-                                  [_theApp setBadgeChat:-[contact.room.badge integerValue]];
-                                  contact.room.badge = [NSNumber numberWithInteger:0];
-                                  
-                                  [_theApp deleteRoom:contact.room];
-                                  contact.room = nil;
-                                  [_theApp saveContext];
-                              }];
+                                      [_theApp deleteRoom:room];
+                                      
+                                      //[contact removeRoomsObject:room];
+                                      //contact.room = nil;
+                                      [_theApp saveContext];
+                                  }];
         
         
 
-        
-        
-//        [[ServiceEngine sharedEngine] leaveRoom:contact.room.rid
-//                                        //andUser:contact.uid
-//                                  withDoneBlock:^(NSError * _Nullable error) {
-//                                     
-//                                      button.enabled = YES;
-//                                      
-//                                      if (error)
-//                                          return;
-//                                    
-//                                      
-//                                      [button setTitle: @"Like" forState: UIControlStateNormal];
-//                                      cell.buttonChat.hidden = YES;
-//                                      
-//                                      [_theApp deleteRoom:contact.room];
-//                                      
-//                                  }];
+        }
 
     }
     

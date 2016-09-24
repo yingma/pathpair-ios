@@ -11,6 +11,7 @@
 
 @interface ChatViewController : JSQMessagesViewController<NSFetchedResultsControllerDelegate>
 
+@property (strong, nonatomic) Contact *contact;
 @property (strong, nonatomic) Room *room;
 
 -(void) messageDidChange: (NSNotification*) aNotification;
