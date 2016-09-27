@@ -2,7 +2,7 @@
 //  SelfDetailViewController.m
 //  SocialTracker
 //
-//  Created by Admin on 5/21/16.
+//  Created by Ying Ma on 5/21/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 
@@ -199,7 +199,7 @@ static NSString *keywordCellID = @"keywordCell";     // the cells with the start
             profileChanged = YES;
         }
         
-        if ((self.genderSwitch.selectedSegmentIndex == 0 && [_contact.gender isEqualToString:@"female"]) || (self.genderSwitch.selectedSegmentIndex == 1 && [_contact.gender isEqualToString:@"male"]) || [_contact.gender isEqualToString:@""]){
+        if ((self.genderSwitch.selectedSegmentIndex == 0 && [_contact.gender isEqualToString:@"female"]) || (self.genderSwitch.selectedSegmentIndex == 1 && [_contact.gender isEqualToString:@"male"]) || (_contact.gender == nil)){
             if (self.genderSwitch.selectedSegmentIndex == 0)
                 _contact.gender = @"male";
             else
@@ -424,13 +424,15 @@ didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
 
 - (void)displayExternalDatePickerForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (_contact == nil)
-        return;
+    assert(_contact != nil);
     
-    if (_contact.birthday == nil) {
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        _contact.birthday = [self.dateFormatter dateFromString:cell.detailTextLabel.text];
-    }
+//    if (_contact == nil)
+//        return;
+    
+//    if (_contact.birthday == nil) {
+//        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//        _contact.birthday = [self.dateFormatter dateFromString:cell.detailTextLabel.text];
+//    }
     
     [self.view endEditing:YES];
     

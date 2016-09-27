@@ -16,6 +16,7 @@
 #import "JSQMessagesAvatarImageFactory.h"
 #import "UIColor+JSQMessages.h"
 #import "DetailTableViewController.h"
+#import "ReportViewController.h"
 
 
 
@@ -69,7 +70,8 @@
     
     assert(self.room != nil);
     
-    NSLog(@"enter room %@", self.room.rid);
+    self.buttonAction.target = self;
+    self.buttonAction.action = @selector(actionButtonPressed);
     //self.title = self.room.name;
 }
 
@@ -106,10 +108,42 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqualToString:@"action"]) {
+    if ([segue.identifier isEqualToString:@"detail"]) {
         DetailTableViewController *controller = [segue destinationViewController];
         controller.contact = self.contact;
+    } else if ([segue.identifier isEqualToString:@"scam"]) {
+        ReportViewController *controller = [segue destinationViewController];
+        controller.contact = self.contact;
     }
+}
+
+- (void)actionButtonPressed {
+    
+    UIAlertController * view=   [UIAlertController
+                                 alertControllerWithTitle:@""
+                                 message:@"Select your Choice"
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"View profile"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action) {
+                             //Do some thing here
+                             [self performSegueWithIdentifier:@"detail" sender:self];
+                             
+                         }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Report scam"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action) {
+                                 [self performSegueWithIdentifier:@"scam" sender:self];
+                                 
+                             }];
+    
+    
+    [view addAction:ok];
+    [view addAction:cancel];
+    [self presentViewController:view animated:YES completion:nil];
 }
 
 

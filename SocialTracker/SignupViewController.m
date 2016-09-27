@@ -77,7 +77,7 @@
     self.buttonNext.layer.cornerRadius = 5;//half of the width
     self.buttonNext.layer.borderColor=[UIColor lightGrayColor].CGColor;
     self.buttonNext.layer.borderWidth=2.0f;
-    self.buttonNext.alpha = 0.5;
+    //self.buttonNext.alpha = 0.5;
     
     for (int i = kSTARTING_TAG; i <= kENDING_TAG; i ++)
         [self.view bringSubviewToFront:[self.view viewWithTag:i]];

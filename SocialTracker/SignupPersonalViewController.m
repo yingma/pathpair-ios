@@ -26,21 +26,46 @@
     
     _theApp = (AppDelegate *) [UIApplication sharedApplication].delegate;
     
-    [self.birthdayPicker setValue:[UIColor whiteColor] forKey: @"textColor"];
+    if (_contact != nil) {
+        self.firstText.text = _contact.firstname;
+        self.lastText.text = _contact.lastname;
+    }
     
-    SEL selector = NSSelectorFromString(@"setHighlightsToday:");
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDatePicker instanceMethodSignatureForSelector:selector]];
-    BOOL no = NO;
-    [invocation setSelector:selector];
-    [invocation setArgument:&no atIndex:2];
-    [invocation invokeWithTarget:self.birthdayPicker];
+    ///first name
+    [self.firstText.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.firstText.layer setBorderWidth:2.0];
+    self.firstText.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    self.firstText.layer.cornerRadius = 5;
+    self.firstText.clipsToBounds = YES;
+    
+    //last name
+    [self.lastText.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.lastText.layer setBorderWidth:2.0];
+    self.lastText.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    self.lastText.layer.cornerRadius = 5;
+    self.lastText.clipsToBounds = YES;
     
     
     self.buttonNext.clipsToBounds = YES;
     self.buttonNext.layer.cornerRadius = 5;//half of the width
     self.buttonNext.layer.borderColor=[UIColor lightGrayColor].CGColor;
     self.buttonNext.layer.borderWidth=2.0f;
+    //self.buttonNext.alpha = 0.5;
     
+    
+    if (self.lastText.text.length == 0 || self.firstText.text.length == 0) {
+        self.buttonNext.enabled = NO;
+        self.buttonNext.alpha = 0.5;
+    } else {
+        self.buttonNext.enabled = YES;
+        self.buttonNext.alpha = 1;
+    }
+    
+    [self.firstText becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,14 +90,36 @@
     //self.buttonSignup.enabled = NO;
     
     if (_contact) {
-        _contact.birthday = [self.birthdayPicker date];
-        _contact.gender = _genderSwitch.selectedSegmentIndex == 0 ? @"male" : @ "female";
+        _contact.firstname = self.firstText.text;
+        _contact.lastname = self.lastText.text;
         [_theApp saveContext];
     }
     //_contact.city = self.zipText.text;
     
     [self performSegueWithIdentifier:@"signup" sender:self];
         
+}
+
+- (IBAction)textFirstNameChanged:(id)sender{
+    
+    if (self.lastText.text.length == 0 || self.firstText.text.length == 0) {
+        self.buttonNext.enabled = NO;
+        self.buttonNext.alpha = 0.5;
+    } else {
+        self.buttonNext.enabled = YES;
+        self.buttonNext.alpha = 1;
+    }
+}
+
+- (IBAction)textLastNameChanged:(id)sender{
+    
+    if (self.lastText.text.length == 0 || self.firstText.text.length == 0) {
+        self.buttonNext.enabled = NO;
+        self.buttonNext.alpha = 0.5;
+    } else {
+        self.buttonNext.enabled = YES;
+        self.buttonNext.alpha = 1;
+    }
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *) segue

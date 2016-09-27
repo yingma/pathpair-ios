@@ -853,7 +853,6 @@ NSString *const kTokenExpiryKey = @"Expiry";
      ];
 }
 
-
 - (void)connectDevice:(NSString *)did
               andType:(NSString *)type
        andDeviceToken:(NSString *)token
@@ -1390,6 +1389,27 @@ NSString *const kTokenExpiryKey = @"Expiry";
     
 }
 
+- (void)reportScam:(NSString *)uid
+         andReason:(NSString *)reason
+           andType:(NSUInteger)type
+            doneBlock:(WebDoneBlock)done {
+    
+    if (![self validateToken])
+        return;
+    
+    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:uid, @"report_uid", [NSString stringWithFormat:@"%i", type], @"type", reason, @"reason", nil];
+    
+    
+    [self.httpManager POST:[@"/v1/contact/report?access_token=" stringByAppendingString:self.accessToken]
+                parameters:params
+                  progress:nil
+                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                       done(nil);
+                   }
+                   failure:^(NSURLSessionDataTask *task, NSError *error) {
+                       done(error);
+                   }];
+}
 
 
 @end

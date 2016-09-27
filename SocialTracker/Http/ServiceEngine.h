@@ -370,4 +370,10 @@ typedef void (^WebRoomBlock)(NSString* __nullable roomid);
 - (void)searchInvitesWithSuccess:(nonnull WebInviteSearchBlock) success
                          failure:(nullable WebFailureBlock)failure;
 
+
+- (void)reportScam:(nonnull NSString *)uid
+         andReason:(nullable NSString *)reason
+           andType:(NSUInteger)type
+         doneBlock:(nullable WebDoneBlock)done;
+
 @end

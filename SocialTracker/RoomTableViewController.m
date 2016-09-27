@@ -13,7 +13,6 @@
 #import "Http/ServiceEngine.h"
 #import "UIImageView+AFNetworking.h"
 #import "ChatViewController.h"
-#import "RoomTableViewCell.h"
 #import "NSDate+TimeAgo.h"
 #import "DetailTableViewController.h"
 
@@ -67,8 +66,7 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     id  sectionInfo =
     [[_fetchedResultsController sections] objectAtIndex:section];

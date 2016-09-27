@@ -23,14 +23,16 @@
 		84125A6F1D31F4E500455C83 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 84125A6D1D31F4E500455C83 /* chat.png */; };
 		84125A701D31F4E500455C83 /* match.png in Resources */ = {isa = PBXBuildFile; fileRef = 84125A6E1D31F4E500455C83 /* match.png */; };
 		841BA7F01D11FFEC002C0006 /* RoundedCornersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841BA7EF1D11FFEC002C0006 /* RoundedCornersView.m */; };
-		841BA80B1D13302C002C0006 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 841BA80A1D13302C002C0006 /* star.png */; };
 		841BA8111D134A64002C0006 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841BA8101D134A63002C0006 /* SettingTableViewController.m */; };
 		841F35ED1D90CCEC007F79C3 /* ServiceInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F35EC1D90CCEC007F79C3 /* ServiceInvite.m */; };
+		841F35F01D98070B007F79C3 /* tutorial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841F35EF1D98070B007F79C3 /* tutorial.jpg */; };
+		841F35F31D984B68007F79C3 /* DeleteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F35F21D984B68007F79C3 /* DeleteTableViewController.m */; };
+		841F35F51D985115007F79C3 /* undelete.png in Resources */ = {isa = PBXBuildFile; fileRef = 841F35F41D985115007F79C3 /* undelete.png */; };
+		841F35F81D98D1D6007F79C3 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F35F71D98D1D6007F79C3 /* ReportViewController.m */; };
 		84224D171D2D9EF000E77DD8 /* WebSocketEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D161D2D9EF000E77DD8 /* WebSocketEngine.m */; };
 		84224D231D2D9FA300E77DD8 /* ServiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84224D221D2D9FA300E77DD8 /* ServiceMessage.m */; };
 		84396DFC1D3F1C2000DB5830 /* Contact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */; };
 		8458AE931CDADE0E004FF4A9 /* ServiceContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458AE921CDADE0E004FF4A9 /* ServiceContact.m */; };
-		8476CBD51D8CAC8500657556 /* tutorial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8476CBD41D8CAC8500657556 /* tutorial.jpg */; };
 		84889B181D58AC2200A2AF13 /* ServiceCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = 84889B171D58AC2200A2AF13 /* ServiceCriteria.m */; };
 		848D44CF1D08BB8D00E38395 /* SignupGeoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D44CE1D08BB8D00E38395 /* SignupGeoViewController.m */; };
 		848D44DB1D0A88DC00E38395 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D44DA1D0A88DC00E38395 /* TagViewController.m */; };
@@ -170,11 +172,16 @@
 		84125A6E1D31F4E500455C83 /* match.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = match.png; path = Resources/match.png; sourceTree = "<group>"; };
 		841BA7EE1D11FFEC002C0006 /* RoundedCornersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedCornersView.h; sourceTree = "<group>"; };
 		841BA7EF1D11FFEC002C0006 /* RoundedCornersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedCornersView.m; sourceTree = "<group>"; };
-		841BA80A1D13302C002C0006 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		841BA80F1D134A63002C0006 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		841BA8101D134A63002C0006 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		841F35EC1D90CCEC007F79C3 /* ServiceInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceInvite.m; path = Data/ServiceInvite.m; sourceTree = "<group>"; };
 		841F35EE1D90CD1D007F79C3 /* ServiceInvite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ServiceInvite.h; path = Data/ServiceInvite.h; sourceTree = "<group>"; };
+		841F35EF1D98070B007F79C3 /* tutorial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tutorial.jpg; path = Resources/tutorial.jpg; sourceTree = "<group>"; };
+		841F35F11D984B68007F79C3 /* DeleteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteTableViewController.h; sourceTree = "<group>"; };
+		841F35F21D984B68007F79C3 /* DeleteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteTableViewController.m; sourceTree = "<group>"; };
+		841F35F41D985115007F79C3 /* undelete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undelete.png; sourceTree = "<group>"; };
+		841F35F61D98D1D6007F79C3 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		841F35F71D98D1D6007F79C3 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		84224D151D2D9EF000E77DD8 /* WebSocketEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebSocketEngine.h; path = Http/WebSocketEngine.h; sourceTree = "<group>"; };
 		84224D161D2D9EF000E77DD8 /* WebSocketEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebSocketEngine.m; path = Http/WebSocketEngine.m; sourceTree = "<group>"; };
 		84224D211D2D9FA300E77DD8 /* ServiceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceMessage.h; path = Http/ServiceMessage.h; sourceTree = "<group>"; };
@@ -184,7 +191,6 @@
 		84396DFB1D3F1C2000DB5830 /* Contact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+CoreDataProperties.m"; path = "Data/Contact+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8458AE911CDADE0E004FF4A9 /* ServiceContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceContact.h; path = Http/ServiceContact.h; sourceTree = "<group>"; };
 		8458AE921CDADE0E004FF4A9 /* ServiceContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceContact.m; path = Http/ServiceContact.m; sourceTree = "<group>"; };
-		8476CBD41D8CAC8500657556 /* tutorial.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tutorial.jpg; sourceTree = "<group>"; };
 		84889B161D58AC2200A2AF13 /* ServiceCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceCriteria.h; path = Http/ServiceCriteria.h; sourceTree = "<group>"; };
 		84889B171D58AC2200A2AF13 /* ServiceCriteria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceCriteria.m; path = Http/ServiceCriteria.m; sourceTree = "<group>"; };
 		848D44CD1D08BB8D00E38395 /* SignupGeoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupGeoViewController.h; sourceTree = "<group>"; };
@@ -368,6 +374,10 @@
 				84125A651D31E36C00455C83 /* ChatViewController.m */,
 				84D8E03E1D5BA90100E717E1 /* RoomTableViewCell.h */,
 				84D8E03F1D5BA90100E717E1 /* RoomTableViewCell.m */,
+				841F35F11D984B68007F79C3 /* DeleteTableViewController.h */,
+				841F35F21D984B68007F79C3 /* DeleteTableViewController.m */,
+				841F35F61D98D1D6007F79C3 /* ReportViewController.h */,
+				841F35F71D98D1D6007F79C3 /* ReportViewController.m */,
 			);
 			name = ChatViewControllers;
 			sourceTree = "<group>";
@@ -494,12 +504,12 @@
 		84AADF3B1CBF612500231E89 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8476CBD41D8CAC8500657556 /* tutorial.jpg */,
+				841F35F41D985115007F79C3 /* undelete.png */,
+				841F35EF1D98070B007F79C3 /* tutorial.jpg */,
 				84F11DCA1D3C86B1001052A5 /* email.png */,
 				84125A6D1D31F4E500455C83 /* chat.png */,
 				84125A6E1D31F4E500455C83 /* match.png */,
 				84C340E71D1B4B7B00850A21 /* instagram.png */,
-				841BA80A1D13302C002C0006 /* star.png */,
 				84CBFB981CF0DB8300C28CCA /* xclose.png */,
 				84CBFB961CF0DB6B00C28CCA /* setting.png */,
 				8408BB631CE18EA800E1F7F9 /* facebook.png */,
@@ -845,17 +855,17 @@
 				84CBFBDE1CF1551A00C28CCA /* slider-metal-track@2x.png in Resources */,
 				84CBFBD61CF1551A00C28CCA /* slider-default7-trackBackground@2x.png in Resources */,
 				8410699B1CC1E03200488835 /* contact.png in Resources */,
+				841F35F51D985115007F79C3 /* undelete.png in Resources */,
 				84CBFBDF1CF1551A00C28CCA /* slider-metal-trackBackground.png in Resources */,
 				84CBFBDC1CF1551A00C28CCA /* slider-metal-handle@2x.png in Resources */,
 				84CBFBDA1CF1551A00C28CCA /* slider-metal-handle-highlighted@2x.png in Resources */,
 				84CBFBD41CF1551A00C28CCA /* slider-default7-track@2x.png in Resources */,
+				841F35F01D98070B007F79C3 /* tutorial.jpg in Resources */,
 				84CBFBDB1CF1551A00C28CCA /* slider-metal-handle.png in Resources */,
 				84CBFBCD1CF1551A00C28CCA /* slider-default-trackBackground.png in Resources */,
 				84CBFBC81CF1551A00C28CCA /* slider-default-handle-highlighted@2x.png in Resources */,
 				84CBFBD81CF1551A00C28CCA /* slider-default7-trackCrossedOver@2x.png in Resources */,
-				8476CBD51D8CAC8500657556 /* tutorial.jpg in Resources */,
 				84CBFBD31CF1551A00C28CCA /* slider-default7-track.png in Resources */,
-				841BA80B1D13302C002C0006 /* star.png in Resources */,
 				84CBFBD21CF1551A00C28CCA /* slider-default7-handle@2x.png in Resources */,
 				84CBFB971CF0DB6B00C28CCA /* setting.png in Resources */,
 				84BD5EAD1CB5F616002A19F2 /* Main.storyboard in Resources */,
@@ -952,12 +962,14 @@
 				84B0B65E1CCB9DC6003CC21B /* SignificantLocationService.m in Sources */,
 				84F135F41D0216D700CA5033 /* FacebookAuthViewController.m in Sources */,
 				84F745041D1B711500E5A96A /* DataModel.xcdatamodeld in Sources */,
+				841F35F81D98D1D6007F79C3 /* ReportViewController.m in Sources */,
 				848D44DB1D0A88DC00E38395 /* TagViewController.m in Sources */,
 				848D44CF1D08BB8D00E38395 /* SignupGeoViewController.m in Sources */,
 				84BF59911CD651860086CC5F /* Tag.m in Sources */,
 				8458AE931CDADE0E004FF4A9 /* ServiceContact.m in Sources */,
 				84BF59901CD651860086CC5F /* Tag+CoreDataProperties.m in Sources */,
 				84ED54681CE83A5B00C74B4E /* SelectViewController.m in Sources */,
+				841F35F31D984B68007F79C3 /* DeleteTableViewController.m in Sources */,
 				84A123BF1CBA78EF00002D12 /* BLEConst.m in Sources */,
 				84BF598E1CD651860086CC5F /* Activity+CoreDataProperties.m in Sources */,
 				84396DFC1D3F1C2000DB5830 /* Contact+CoreDataProperties.m in Sources */,

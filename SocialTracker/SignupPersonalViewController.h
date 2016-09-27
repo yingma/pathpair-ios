@@ -13,8 +13,11 @@
 
 - (IBAction)signup:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *birthdayPicker;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *genderSwitch;
+- (IBAction)textFirstNameChanged:(id)sender;
+- (IBAction)textLastNameChanged:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *firstText;
+@property (weak, nonatomic) IBOutlet UITextField *lastText;
 //@property (weak, nonatomic) IBOutlet UITextField *zipText;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonNext;

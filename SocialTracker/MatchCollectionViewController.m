@@ -143,10 +143,9 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                             contact = [_theApp newContact];
                                                             contact.uid = uid;
                                                             contact.flag = [NSNumber numberWithInteger:1]; // new
-                                                            
-                                                            
-                                                        } else if (m == nil)
-                                                            contact.flag = [NSNumber numberWithInteger:2];
+                                                
+                                                        } //else if (m == nil)
+                                                            //contact.flag = [NSNumber numberWithInteger:2];
                                                         
                                                         //NSLog(@"%@ %d", uid, [contact.flag integerValue]);
                                                         

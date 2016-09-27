@@ -11,9 +11,13 @@
 
 @interface ChatViewController : JSQMessagesViewController<NSFetchedResultsControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonAction;
+
 @property (strong, nonatomic) Contact *contact;
 @property (strong, nonatomic) Room *room;
 
 -(void) messageDidChange: (NSNotification*) aNotification;
+
+- (void)actionButtonPressed;
 
 @end

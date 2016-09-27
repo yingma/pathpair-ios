@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "RoomTableViewCell.h"
 
 @interface RoomTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+- (void)configureCell:(RoomTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 @end

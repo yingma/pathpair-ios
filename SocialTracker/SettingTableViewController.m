@@ -52,7 +52,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
     if (section == 2)
-        return 2;
+        return 3;
     return 1;
 }
 
@@ -72,12 +72,19 @@ didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
             [_theApp pathService].on = YES;
         }
         
-    } else if (indexPath.section == 2 && indexPath.row == 0) {
+    } else if (indexPath.section == 2) {
         
-        [[ServiceEngine sharedEngine] logout];
-        [_theApp purge];
+        if (indexPath.row == 2) {
         
-        [_theApp enterLoginSegue];
+            [[ServiceEngine sharedEngine] logout];
+            [_theApp purge];
+        
+            [_theApp enterLoginSegue];
+            
+        } else if (indexPath.row == 0) {
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.pathpair.com/"]];
+        }
     }
 }
 

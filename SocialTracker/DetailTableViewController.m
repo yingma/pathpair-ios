@@ -367,10 +367,10 @@
                                       
                                     dispatch_async(dispatch_get_main_queue(), ^{
                                           
-                                                self.buttonLike.enabled = YES;
+                                        self.buttonLike.enabled = YES;
                                           
-                                                [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
-                                                self.buttonChat.hidden = NO;
+                                        [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
+                                        self.buttonChat.hidden = NO;
                                     });
                                           
                                     Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
@@ -396,28 +396,30 @@
                                                args:array
                               withCompletionHandler:^() {
                                   
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                      self.buttonLike.enabled = YES;
-                                  
-                                      [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
-                                      self.buttonChat.hidden = YES;
-                                      
-                                      [self performSegueWithIdentifier:@"unlike" sender:self];
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      self.buttonLike.enabled = YES;
+                  
+                      [self.buttonLike setTitle: @"Like" forState: UIControlStateNormal];
+                      self.buttonChat.hidden = YES;
+                      
+                      [self performSegueWithIdentifier:@"unlike" sender:self];
+                      [_theApp setBadgeChat:-[room.badge integerValue]];
 
-                                  });
-                                  
-                                  NSDictionary *parameters = @{@"roomId" : room.rid};
-                                  NSArray *array = [NSArray arrayWithObject:parameters];
-                                  [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
-                                  
-                                  [_theApp deleteRoom:room];
-                                  //self.contact.room = nil;
-                                  [_theApp saveContext];
-                                  
-                              }];
+                  });
+                  
+                  NSDictionary *parameters = @{@"roomId" : room.rid};
+                  NSArray *array = [NSArray arrayWithObject:parameters];
+                  [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
+                  
+                  [_theApp deleteRoom:room];
         
-            [_theApp setBadgeChat:-[room.badge integerValue]];
-            room.badge = [NSNumber numberWithInteger:0];
+                  room.badge = [NSNumber numberWithInteger:0];
+                  
+                  //self.contact.room = nil;
+                  [_theApp saveContext];
+                                  
+            }];
+        
 
 
         }
@@ -429,9 +431,20 @@
     
     self.contact.flag = [NSNumber numberWithInteger:0];
     
+    if (self.contact.rooms.count > 0) {
+        
+        Room *room = [self.contact.rooms allObjects][0];
+        
+        NSDictionary *parameters = @{@"roomId" : room.rid};
+        NSArray *array = [NSArray arrayWithObject:parameters];
+        [[WebSocketEngine sharedEngine] emit:@"leave" args:array];
+        
+        [_theApp deleteRoom:room];
+    }
+    
     [_theApp saveContext];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"unlike" sender:self];
 }
 
 

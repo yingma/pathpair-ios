@@ -2,7 +2,7 @@
 //  TagSearchSource.m
 //  SocialTracker
 //
-//  Created by Admin on 5/21/16.
+//  Created by Ying Ma on 5/21/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 

@@ -41,6 +41,14 @@
         _contact = [_theApp newContact];
         //set up dummy contact uuid here
         _contact.uuid = @"00000000-0000-1001-8000-00805F9B34FB";
+        
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setDay:17];
+        [comps setMonth:5];
+        [comps setYear:1989];
+        _contact.birthday = [[NSCalendar currentCalendar] dateFromComponents:comps];
+        _contact.gender = @"male";
+        
         [[NSUserDefaults standardUserDefaults] setObject:@"00000000-0000-1001-8000-00805F9B34FB" forKey:kUUIDKey];
         [_theApp saveContext];
 

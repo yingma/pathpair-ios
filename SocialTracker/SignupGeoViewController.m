@@ -2,7 +2,7 @@
 //  SignupGeoViewController.m
 //  SocialTracker
 //
-//  Created by Admin on 6/8/16.
+//  Created by Ying Ma on 6/8/16.
 //  Copyright © 2016 Flash Software Solution Inc. All rights reserved.
 //
 
@@ -29,18 +29,30 @@
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:_theApp.latitude longitude:_theApp.longitude];
     
-    [_geocoder reverseGeocodeLocation:location
-                    completionHandler:^(NSArray *placemarks, NSError *error) {
+    if (_theApp.latitude != 0 && _theApp.longitude != 0) {
+        [_geocoder reverseGeocodeLocation:location
+                        completionHandler:^(NSArray *placemarks, NSError *error) {
                         //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-                        if (error == nil && [placemarks count] > 0) {
+                            if (error == nil && [placemarks count] > 0) {
                             
-                            CLPlacemark *placemark = [placemarks lastObject];
-                            self.zipText.text = [NSString stringWithFormat:@"%@,%@", placemark.locality, placemark.administrativeArea];
+                                CLPlacemark *placemark = [placemarks lastObject];
+                                self.zipText.text = [NSString stringWithFormat:@"%@,%@", placemark.locality, placemark.administrativeArea];
                             
-                        } else {
-                            NSLog(@"%@", error.debugDescription);
-                        }
-                    }];
+                            } else {
+                                NSLog(@"%@", error.debugDescription);
+                            }
+                        }];
+    }
+    
+    
+    //city
+    [self.zipText.layer setBorderColor:[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor]];
+    [self.zipText.layer setBorderWidth:2.0];
+    self.zipText.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    
+    //The rounded corner part, where you specify your view's corner radius:
+    self.zipText.layer.cornerRadius = 5;
+    self.zipText.clipsToBounds = YES;
     
     self.buttonSignup.clipsToBounds = YES;
     self.buttonSignup.layer.cornerRadius = 5;//half of the width
@@ -58,7 +70,6 @@
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.pathpair.com/privacy.html"]];
 }
-
 
 
 - (IBAction)signup:(id)sender {
@@ -103,8 +114,8 @@
                                    
                                    // sign up to web service to update contact.
                                    [[ServiceEngine sharedEngine] updateContact:@""
-                                                                      lastName:@""
-                                                                     firstName:@""
+                                                                      lastName:_contact.lastname
+                                                                     firstName:_contact.firstname
                                                                         gender:_contact.gender
                                                                       birthday:_contact.birthday
                                                                        company:@""
