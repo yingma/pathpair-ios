@@ -14,7 +14,12 @@
 - (void)addMessagesObject:(Message *)message {
     
     NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.messages];
-    [tempSet addObject:message];
+    if ([message.sequence integerValue] != 0)
+        [tempSet addObject:message];
+    else
+        [tempSet insertObject:message
+                      atIndex:0];
+    
     self.messages = tempSet;
     self.time = [NSDate date];
 }

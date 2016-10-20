@@ -240,41 +240,6 @@
                                                                                         
                                                                                         [[WebSocketEngine sharedEngine] registerWithChatSocketDelegate:_theApp];
                                                                                         
-//                                                                                        [[ServiceEngine sharedEngine] getProfile:contacts[0].uuid type:@"self" withSuccess:^(NSArray<NSString *> * _Nullable tags) {
-//                                                                                            
-//                                                                                            for (NSString *t in tags) {
-//                                                                                                
-//                                                                                                Tag * tag = [_theApp newTag:t];
-//                                                                                                [contact addTagsObject:tag];
-//                                                                                            }
-//                                                                                            
-//                                                                                            [[ServiceEngine sharedEngine] getCriteriaWithSuccess:^(ServiceCriteria * _Nullable criteria) {
-//                                                                                                
-//                                                                                                Search * search = [_theApp getCriteria];
-//                                                                                                search.ageFrom = [NSNumber numberWithFloat:criteria.from];
-//                                                                                                search.ageTo = [NSNumber numberWithFloat:criteria.to];
-//                                                                                                search.male = [NSNumber numberWithBool:criteria.male];
-//                                                                                                search.female = [NSNumber numberWithBool:criteria.female];
-//                                                                                                
-//                                                                                                [[ServiceEngine sharedEngine] getCriteriaTagWithSuccess:^(NSArray<NSString *> * _Nullable tags) {
-//                                                                                                    
-//                                                                                                    for (NSString * tag in tags) {
-//                                                                                                        [search addTagsObject:[_theApp newTag:tag]];
-//                                                                                                    }
-//                                                                                                    
-//                                                                                                } failure:^(NSError * _Nullable error) {
-//                                                                                                    
-//                                                                                                }];
-//                                                                                                
-//                                                                                            } failure:^(NSError * _Nullable error) {
-//                                                                                                
-//                                                                                            }];
-//           
-//                                                                                        } failure:^(NSError * _Nullable error) {
-//                                                                                            
-//                                                                                        }];
-                                                                                        
-                                                                                        
                                                                                         [_theApp saveContext];
                                                                                     }
                                                                                     
@@ -315,6 +280,7 @@
                                       [alert addAction:emailAction];
                                       
                                       [self presentViewController:alert animated:YES completion:nil];
+
                                       
                                   })];
                               }];

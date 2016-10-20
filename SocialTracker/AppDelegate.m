@@ -231,6 +231,8 @@ forRemoteNotification:(NSDictionary *)userInfo
             Message * message = [self newMessage:[NSString stringWithFormat:@"You like back, you can chat with %@", contact.firstname]
                                          andUser:[[ServiceEngine sharedEngine] uid]];
             
+            message.sequence= [NSNumber numberWithInt:0];
+            
             [room addMessagesObject:message];
             
             Contact* c = [self getContactbyUid:[[ServiceEngine sharedEngine] uid]];
@@ -340,8 +342,10 @@ forRemoteNotification:(NSDictionary *)userInfo
                                        Message * message = [self newMessage:[NSString stringWithFormat:@"You like back, you can chat with %@", contact.firstname]
                                                                     andUser:[[ServiceEngine sharedEngine] uid]];
                                        
+                                       message.sequence = [NSNumber numberWithInt:0];
+                                       
                                        [room addMessagesObject:message];
-
+                                       
                                        Contact* c = [self getContactbyUid:[[ServiceEngine sharedEngine] uid]];
                                        [self enterRoom1:room andUser:c];
                                        
@@ -437,6 +441,9 @@ forRemoteNotification:(NSDictionary *)userInfo
             // add messages
             Message * message = [self newMessage:[NSString stringWithFormat:@"%@ likes you back, so you can chat", contact.firstname]
                                          andUser:uid];
+            
+            message.sequence = [NSNumber numberWithInt:0];
+            
             [room addMessagesObject:message];
             
             // enter the room logic
@@ -487,11 +494,19 @@ forRemoteNotification:(NSDictionary *)userInfo
         if (![room.rid isEqualToString:rid]) { // if it is duplicate room
             
             _badgeChat -= [room.badge integerValue];
+            
+            [self setBadgeChat:-[room.badge integerValue]];
+            
             room.badge = [NSNumber numberWithInteger:0];
             
-            [self deleteRoom:room];
+            [[ServiceEngine sharedEngine] leaveRoom:room.rid withDoneBlock:^(NSError * _Nullable error) {
+                if (!error)
+                    [self deleteRoom:room];
+            }];
+            
+            
             //[contact removeRoomsObject:room];
-            //contact.room = nil;a
+            //contact.room = nil;
         }
     }
     
@@ -764,6 +779,9 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                       // add messages
                                                       Message * message = [self newMessage:[NSString stringWithFormat:@"%@ likes you back, so you can chat", contact.firstname]
                                                                                    andUser:ids[0]];
+                                                      
+                                                      message.sequence = [NSNumber numberWithInt:0];
+                                                      
                                                       [room addMessagesObject:message];
                                                       room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
 
@@ -778,6 +796,7 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                       [self saveContext];
                                                       
                                                   }
+                                                  
                                                   
                                                   
                                               } failure:^(NSError * _Nullable error) {
@@ -806,7 +825,6 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                
                                                if (![m.uid isEqualToString:[ServiceEngine sharedEngine].uid])
                                                    room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
-                                               
                                                
                                                Message* message = [self newMessage:m.text
                                                                            andUser:m.uid];
@@ -1018,10 +1036,14 @@ forRemoteNotification:(NSDictionary *)userInfo
                 room.pending = [NSNumber numberWithInteger:0];
                 [self saveContext];
                 
+                // find user in the room
                 [[ServiceEngine sharedEngine] findUsersInRoom:rid
                                                   withSuccess:^(NSArray<NSString *> * _Nullable userIds) {
                                                       
                                                       for (NSString * uid in userIds) {
+                                                          
+                                                          if ([uid isEqual:[NSNull null]])
+                                                              continue;
                                                           
                                                           Contact *contact = [self getContactbyUid:uid];
                                                           
@@ -1037,22 +1059,84 @@ forRemoteNotification:(NSDictionary *)userInfo
                                                           if (![uid isEqualToString:[[ServiceEngine sharedEngine] uid]]) {
                                                               [contact addRoomsObject:room];
                                                               room.name = [NSString stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+                                                              
+                                                              [[ServiceEngine sharedEngine] findMessages:rid
+                                                                                        andLastMessageId:nil
+                                                                                             withSuccess:^(NSArray<ServiceMessage *> * _Nullable messages) {
+                                                                                                 
+                                                                                                 for (int i = 0; i < messages.count; i++) {
+                                                                                                     
+                                                                                                     ServiceMessage *m = messages[i];
+                                                                                                     
+                                                                                                     if ([self getMessageByUser:m.uid
+                                                                                                                    andSequence:m.sequence] != nil)
+                                                                                                         continue;
+                                                                                                     
+                                                                                                     if (![m.uid isEqualToString:[ServiceEngine sharedEngine].uid])
+                                                                                                         room.badge = [NSNumber numberWithInteger:[room.badge integerValue] + 1];
+                                                                                                     
+                                                                                                     Message* message = [self newMessage:m.text
+                                                                                                                                 andUser:m.uid];
+                                                                                                     
+                                                                                                     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                                                                                                     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+                                                                                                     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+                                                                                                     message.utime = [dateFormatter dateFromString:m.time];
+                                                                                                     //                                               message.uid = m.uid;
+                                                                                                     //                                               message.text = m.text;
+                                                                                                     message.mid = m.mid;
+                                                                                                     message.sequence = [NSNumber numberWithInteger:m.sequence];
+                                                                                                     room.time = message.utime;
+                                                                                                     
+                                                                                                     [room addMessagesObject:message];
+                                                                                                     
+                                                                                                     [NSObject eventPostNotification:kMessageChangeNotification
+                                                                                                                            withDict:@{@"message":m}];
+                                                                                                     
+                                                                                                     //                                               [self saveContext];
+                                                                                                     
+                                                                                                 }
+                                                                                                 
+                                                                                                 //                                          room.time = [NSDate date];
+                                                                                                 
+                                                                                                 _badgeChat += [room.badge integerValue];
+                                                                                                 
+                                                                                                 NSLog(@"badge:%d", _badgeChat);
+                                                                                                 
+                                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                     [self setBadgeChat:_badgeChat];
+                                                                                                 });
+                                                                                                 
+                                                                                                 
+                                                                                                 [self saveContext];
+                                                                                                 
+                                                                                                 
+                                                                                             } failure:^(NSError * _Nullable error) {
+                                                                                                 
+                                                                                                 NSLog(@"Web fetch message error %@, %@", error, [error userInfo]);
+                                                                                             }];
+
+                                                              
+                                                              
+                                                              
                                                           } else if (userIds.count < 2) {
                                                               [self deleteRoom:room];
                                                               //[contact removeRoomsObject:room];
                                                               //contact.room = nil;
                                                           }
-                                                          
+                                
                                                       }
                                                       
                                                       
                                                       [self saveContext];
                                                       
                                                       
-                                                  } failure:^(NSError * _Nullable error) {
+                                                    } failure:^(NSError * _Nullable error) {
                                                       
-                                                  }];
+                                                    }];
                 
+                
+
                 
             }
             
@@ -1314,43 +1398,61 @@ forRemoteNotification:(NSDictionary *)userInfo
     NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
     NSError *deleteError = nil;
-    [_persistentStoreCoordinator executeRequest:delete
-                                        withContext:_managedObjectContext
+    [self.persistentStoreCoordinator executeRequest:delete
+                                        withContext:self.managedObjectContext
                                               error:&deleteError];
+    
+    if (deleteError != nil)
+        NSLog(@"%@", deleteError.localizedDescription);
     
     request = [[NSFetchRequest alloc] initWithEntityName:@"Room"];
     delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
-    [_persistentStoreCoordinator executeRequest:delete
-                                    withContext:_managedObjectContext
+    [self.persistentStoreCoordinator executeRequest:delete
+                                    withContext:self.managedObjectContext
                                           error:&deleteError];
+    
+    if (deleteError != nil)
+        NSLog(@"%@", deleteError.localizedDescription);
     
     
     request = [[NSFetchRequest alloc] initWithEntityName:@"Contact"];
     delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
-    [_persistentStoreCoordinator executeRequest:delete
-                                    withContext:_managedObjectContext
+    [self.persistentStoreCoordinator executeRequest:delete
+                                    withContext:self.managedObjectContext
                                           error:&deleteError];
+    
+    if (deleteError != nil)
+        NSLog(@"%@", deleteError.localizedDescription);
     
     
     request = [[NSFetchRequest alloc] initWithEntityName:@"Meeting"];
     delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
-    [_persistentStoreCoordinator executeRequest:delete
-                                    withContext:_managedObjectContext
+    [self.persistentStoreCoordinator executeRequest:delete
+                                    withContext:self.managedObjectContext
                                           error:&deleteError];
+    
+    if (deleteError != nil)
+        NSLog(@"%@", deleteError.localizedDescription);
     
     request = [[NSFetchRequest alloc] initWithEntityName:@"Tag"];
     delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
     
-    [_persistentStoreCoordinator executeRequest:delete
-                                    withContext:_managedObjectContext
+    [self.persistentStoreCoordinator executeRequest:delete
+                                    withContext:self.managedObjectContext
                                           error:&deleteError];
     
+    if (deleteError != nil)
+        NSLog(@"%@", deleteError.localizedDescription);
+    
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kPhotoKey];
-
-
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kUUIDKey];
+    
+    [self.managedObjectContext reset];
+    
 }
 
 
@@ -1574,9 +1676,9 @@ forRemoteNotification:(NSDictionary *)userInfo
     }];
 
     // advertise via bluetooth
-//    NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:kUUIDKey];
-//    if (uuid != nil && ![[BLEPeripheralManager manager] peripheralManager].isAdvertising)
-//        [[BLEPeripheralManager manager] startAdvertising:uuid];
+    NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:kUUIDKey];
+    if (uuid != nil && ![[BLEPeripheralManager manager] peripheralManager].isAdvertising)
+        [[BLEPeripheralManager manager] startAdvertising:uuid];
 }
 
 - (void)enterLoginSegue {

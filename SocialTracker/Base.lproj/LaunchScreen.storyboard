@@ -3,6 +3,7 @@
     <dependencies>
         <deployment version="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutorial.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-o7-Msm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tutorial.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-o7-Msm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-uH-tLH">
@@ -33,9 +34,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="MYA-sW-Ew7" firstAttribute="top" secondItem="AzV-o7-Msm" secondAttribute="bottom" id="4JS-oG-ulm"/>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="centerX" secondItem="d1Y-uH-tLH" secondAttribute="centerX" id="6Ts-27-KSN"/>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="top" secondItem="tZw-9U-t3z" secondAttribute="bottom" constant="45" id="EHp-eT-UhH"/>
+                            <constraint firstItem="AzV-o7-Msm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="RND-tb-Xqj"/>
+                            <constraint firstItem="AzV-o7-Msm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="kHd-ca-Xqx"/>
                             <constraint firstItem="xQE-3d-zU3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lOY-Xg-Pc3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AzV-o7-Msm" secondAttribute="trailing" constant="-20" id="nKg-SZ-Yyx"/>
                             <constraint firstItem="MYA-sW-Ew7" firstAttribute="top" secondItem="d1Y-uH-tLH" secondAttribute="bottom" constant="287" id="zqS-rL-bGF"/>
                         </constraints>
                     </view>

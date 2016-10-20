@@ -120,11 +120,11 @@
 - (void)actionButtonPressed {
     
     UIAlertController * view=   [UIAlertController
-                                 alertControllerWithTitle:@""
-                                 message:@"Select your Choice"
+                                 alertControllerWithTitle:@"Select your Choice"
+                                 message:@""
                                  preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction* ok = [UIAlertAction
+    UIAlertAction* profile = [UIAlertAction
                          actionWithTitle:@"View profile"
                          style:UIAlertActionStyleDefault
                          handler:^(UIAlertAction * action) {
@@ -132,7 +132,7 @@
                              [self performSegueWithIdentifier:@"detail" sender:self];
                              
                          }];
-    UIAlertAction* cancel = [UIAlertAction
+    UIAlertAction* report= [UIAlertAction
                              actionWithTitle:@"Report scam"
                              style:UIAlertActionStyleDefault
                              handler:^(UIAlertAction * action) {
@@ -140,8 +140,17 @@
                                  
                              }];
     
+    UIAlertAction* cancel= [UIAlertAction
+                            actionWithTitle:@"Cancel"
+                            style:UIAlertActionStyleCancel
+                            handler:^(UIAlertAction * action) {
+                               
+                                
+                            }];
     
-    [view addAction:ok];
+    
+    [view addAction:profile];
+    [view addAction:report];
     [view addAction:cancel];
     [self presentViewController:view animated:YES completion:nil];
 }
@@ -345,9 +354,11 @@ NSString *const kMessageSequence       = @"MessageSequence";
     // [JSQSystemSoundPlayer jsq_playMessageSentSound];
     
     Message *message = [_theApp newMessage:text andUser:senderId];
-    [self.room addMessagesObject:message];
+
     NSInteger seq = [[NSUserDefaults standardUserDefaults] integerForKey:kMessageSequence];
     message.sequence = [NSNumber numberWithInteger: ++ seq];
+    [self.room addMessagesObject:message];
+    
     [_theApp saveContext];
     
     [[NSUserDefaults standardUserDefaults] setInteger:seq

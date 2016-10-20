@@ -36,6 +36,8 @@
 
     self.buttonSend.target = self;
     self.buttonSend.action = @selector(sendButtonPressed);
+    
+    [self.textReason becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

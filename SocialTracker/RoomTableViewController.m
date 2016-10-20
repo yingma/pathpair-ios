@@ -46,6 +46,8 @@
     
     self.title = @"Chat";
     
+    [self.tableView reloadData];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -110,15 +112,15 @@
                 contact.needRefresh = NO;
                 
                 
-               [self.tableView beginUpdates];
-               [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-               [self.tableView endUpdates];
+                [self.tableView beginUpdates];
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                [self.tableView endUpdates];
                
                // use 30 days ago date
                 NSDate *start = [[NSDate date] dateByAddingTimeInterval:-30*24*60*60];
                
                
-              [[ServiceEngine sharedEngine] searchMeetingFromTime:start
+                [[ServiceEngine sharedEngine] searchMeetingFromTime:start
                                                             toTime:nil
                                                             andUid:contact.uid
                                                        withSuccess:^(NSArray<ServiceMeeting *> * _Nullable meetings) {

@@ -14,14 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CHTCollectionViewWaterfallLayout (0.9.4):
-    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.4)
-  - CHTCollectionViewWaterfallLayout/ObjC (0.9.4)
-  - JSQMessagesViewController (7.3.3):
+  - CHTCollectionViewWaterfallLayout (0.9.5):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
+  - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - NSDate+TimeAgo (1.0.6)
-  - Socket.IO-Client-Swift (6.1.4)
+  - Socket.IO-Client-Swift (6.1.6)
   - TURecipientBar (2.0.2)
   - UITextView+Placeholder (1.2.0)
 
@@ -36,11 +36,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CHTCollectionViewWaterfallLayout: db74be9135826d285f45ff163fd090e57c99fc50
-  JSQMessagesViewController: 0ee3f80237268192a3e8337fd0d787f1a1bf5a7a
+  CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   NSDate+TimeAgo: 35601c619b2d59290055e4fe76e61d97677a2360
-  Socket.IO-Client-Swift: 79dfbbe170d7816c84e2d3cc2baa3d227549e067
+  Socket.IO-Client-Swift: 5eddbfafd3c035a77d365d5b58da93cc488af11f
   TURecipientBar: d701cfb1413b212169bdfc30de1721c7da0e15fc
   UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 

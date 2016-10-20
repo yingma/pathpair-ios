@@ -320,7 +320,7 @@ typedef void (^WebRoomBlock)(NSString* __nullable roomid);
  *  find message with room.
  */
 - (void)findMessages:(nonnull NSString *) roomId
-    andLastMessageId:(nonnull NSString *) messageId
+    andLastMessageId:(nullable NSString *) messageId
          withSuccess:(nonnull WebMessageSearchBlock) success
              failure:(nullable WebFailureBlock)failure;
 

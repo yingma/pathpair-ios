@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '318019D85469655393220180'
+               BlueprintIdentifier = '16027C6EFE39C65449E1D374'
                BlueprintName = 'TURecipientBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'TURecipientBar.framework'>

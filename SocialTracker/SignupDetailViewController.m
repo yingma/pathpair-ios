@@ -312,12 +312,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         return;
     }
     
-    if (_contact != nil) {
-        
+    if (_contact != nil)
         [ServiceEngine sharedEngine].password = self.textPassword.text;
-        
-        [_theApp saveContext];
-    }
+
     
     [self performSegueWithIdentifier:@"signup" sender:self];
 }

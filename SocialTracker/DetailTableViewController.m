@@ -280,6 +280,7 @@
                                                      }                                                     
 
                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                         self.buttonLike.enabled = YES;
                                                          [self.buttonLike setTitle: @"Unlike" forState: UIControlStateNormal];
                                                      });
                                                      

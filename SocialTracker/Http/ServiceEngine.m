@@ -1142,8 +1142,13 @@ NSString *const kTokenExpiryKey = @"Expiry";
     if (![self validateToken])
         return;
     
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:roomId, @"rid", messageId, @"mid", nil];
+    NSDictionary *params;
     
+    if (messageId == nil)
+        params = [[NSDictionary alloc] initWithObjectsAndKeys:roomId, @"rid", nil];
+    else
+        params = [[NSDictionary alloc] initWithObjectsAndKeys:roomId, @"rid", messageId, @"mid", nil];
+  
     [self.httpManager POST:[@"/v1/room/message?access_token=" stringByAppendingString:self.accessToken]
                 parameters:params
                   progress:nil

@@ -77,6 +77,7 @@ didSelectRowAtIndexPath: (NSIndexPath *)indexPath {
         if (indexPath.row == 2) {
         
             [[ServiceEngine sharedEngine] logout];
+            
             [_theApp purge];
         
             [_theApp enterLoginSegue];

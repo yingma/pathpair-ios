@@ -18,6 +18,9 @@
 #import "ChatViewController.h"
 
 
+#define CELL_IDENTIFIER @"WaterfallCell"
+
+
 @interface MatchCollectionViewController ()
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -56,10 +59,11 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
     
     [super viewDidLoad];
     
-
-    
     _theApp = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    ((CHTCollectionViewWaterfallLayout *)self.collectionViewLayout).minimumColumnSpacing = 0;
+    
+    //((CHTCollectionViewWaterfallLayout *)self.collectionViewLayout).minimumColumnSpacing = 0;
+    
+    ((CHTCollectionViewWaterfallLayout *)self.collectionViewLayout).columnCount = 2;
     
     // location event
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -99,7 +103,6 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
     [super viewWillAppear:animated];
     [self.collectionView reloadData];
 }
@@ -640,7 +643,7 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(153, 209);
+    return CGSizeMake(1000, 1350);
 }
 
 
@@ -710,15 +713,6 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                
                                                //NSLog(@"%d", contact.room.contacts.count);
                                                
-                                               // add other to the room
-                                               [_theApp enterRoom1:r
-                                                           andUser:contact];
-
-                                               //enter chat room
-                                               NSDictionary *parameters = @{@"roomId" : roomid};
-                                               NSArray *array = [NSArray arrayWithObject:parameters];
-                                               [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
-                                               
                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                    
                                                    button.enabled = YES;
@@ -738,6 +732,15 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                
                                                    [self presentViewController:alert animated:YES completion:nil];
                                                });
+                                               
+                                               // add other to the room
+                                               [_theApp enterRoom1:r
+                                                           andUser:contact];
+                                               
+                                               //enter chat room
+                                               NSDictionary *parameters = @{@"roomId" : roomid};
+                                               NSArray *array = [NSArray arrayWithObject:parameters];
+                                               [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
                                         }];
             }
         }];
@@ -786,19 +789,22 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
                                                                                   
                                             return;
                                         }
-                                      
+                                          
+                                        dispatch_async(dispatch_get_main_queue(), ^{
+                                              button.enabled = YES;
+                                        });
                                       
                                         Contact* c = [_theApp getContactbyUid:[[ServiceEngine sharedEngine] uid]];
                                         //[contact.room addContactsObject:c];
                                         room.pending = [NSNumber numberWithInteger:0];
                                         [_theApp enterRoom1:room andUser:c];
-                                      
+    
                                       
                                         // enter the room
                                         NSDictionary *parameters = @{@"roomId" : room.rid};
                                         NSArray *array = [NSArray arrayWithObject:parameters];
                                         [[WebSocketEngine sharedEngine] emit:@"enter" args:array];
-                                      
+                                          
                                   }];
 
         
@@ -814,6 +820,8 @@ NSString * const kNewFindingNotification = @"kNewFindingNotification";
             [[WebSocketEngine sharedEngine] emitWithAck:@"send"
                                                    args:array
                                   withCompletionHandler:^() {
+                                      
+                                      button.enabled = YES;
                                   
                                       NSDictionary *parameters = @{@"roomId" : room.rid};
                                       NSArray *array = [NSArray arrayWithObject:parameters];
